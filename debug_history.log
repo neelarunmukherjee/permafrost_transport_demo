@@ -1,0 +1,1000 @@
+ 1124  module load ats/master
+ 1125  ats --version
+ 1126  module unload ats
+ 1127  ats --version
+ 1128  which ats
+ 1129  echo $PATH | tr ':' '\n' | grep ats
+ 1130  nano ~/.bashrc
+ 1131  source ~/bashrc
+ 1132  source ~/.bashrc
+ 1133  which ats
+ 1134  echo $PATH | tr ':' '\n' | grep ats
+ 1135  code ~/.bashrc
+ 1136  code ~/set_ats_env.sh 
+ 1137  ats --version
+ 1138  cd ATS
+ 1139  ls
+ 1140  ats --version
+ 1141  cd ..
+ 1142  ls
+ 1143  rm set_ats_env_1_5_1.sh 
+ 1144  ls
+ 1145  code set_ats_env.sh 
+ 1146  ls
+ 1147  cd modules/
+ 1148  ls
+ 1149  dc ats
+ 1150  cd ats
+ 1151  ls
+ 1152  nano master
+ 1153  code master
+ 1154  After I save, what to put in bashprofiles
+ 1155  clear
+ 1156  code ~/.bashrc
+ 1157  source ~/.bashrc
+ 1158  ls
+ 1159  pwd
+ 1160  code ~/.bashrc
+ 1161  source ~/.bashrc
+ 1162  ls
+ 1163  source ~/.bashrc
+ 1164  module avail ats
+ 1165  module spider ats
+ 1166  module load ats/master 
+ 1167  ats --version
+ 1168  cd
+ 1169  module avail ats
+ 1170  ats --version
+ 1171  module load ats/master 
+ 1172  module unload ats/master
+ 1173  ats --version
+ 1174  module load ats/master 
+ 1175  module avail
+ 1176  ls
+ 1177  cd modules/
+ 1178  ls
+ 1179  cd ats
+ 1180  ls
+ 1181  cd ../..
+ 1182  ls
+ 1183  ats --version
+ 1184  module load ats/master
+ 1185  source ~/.bashrc
+ 1186  #%Module
+ 1187  module load ats/master
+ 1188  module avail
+ 1189  which module
+ 1190  sudo apt-get update
+ 1191  source ~/.bashrc
+ 1192  module avail
+ 1193  ats --version
+ 1194  module load ats/master
+ 1195  ls
+ 1196  code ~/.bashrc
+ 1197  module avail
+ 1198  ssh nm32873@grace.ae.utexas.edu
+ 1199  ls
+ 1200  ats --version
+ 1201  ls
+ 1202  cd ATS/
+ 1203  ls
+ 1204  ats --version
+ 1205  cd ..
+ 1206  ls
+ 1207  tail -f out.log_installv1_6 
+ 1208  tail -f out.log_installv1_6_v1 
+ 1209  tail -f out.log_installv1_6_v2
+ 1210  module load master 
+ 1211  ats --version
+ 1212  module unload master
+ 1213  tail -f out.log_amanziupdate 
+ 1214  ats --version
+ 1215  module avail
+ 1216  module load ats/v1.6
+ 1217  module load v1.6 
+ 1218  ats --version
+ 1219  cd ${AMANZI_SRC_DIR}/tools/input_converters
+ 1220  cd ${AMANZI_SRC_DIR}/tools/
+ 1221  ls
+ 1222  cd
+ 1223  cd ${ATS_SRC_DIR}/tools
+ 1224  ls
+ 1225  cd input_converters/
+ 1226  ls
+ 1227  ats --version
+ 1228  module load ats/master
+ 1229  module load modules master 
+ 1230  ats --version
+ 1231  module unload modules master 
+ 1232  ats --version
+ 1233  module load modules master 
+ 1234  ats --version
+ 1235  source ~/.bashrc 
+ 1236  ats --version
+ 1237  module unload master
+ 1238  module unload modules
+ 1239  clear
+ 1240  ats --version
+ 1241  module load master 
+ 1242  ats --version
+ 1243  module unload master 
+ 1244  ls
+ 1245  code modules/ats/master 
+ 1246  pwd
+ 1247  source ~/.bashrc
+ 1248  module avail ats
+ 1249  module avail
+ 1250  module load master
+ 1251  ats --version
+ 1252  source ~/.bashrc
+ 1253  module load master
+ 1254  ats --version
+ 1255  module unload master
+ 1256  ats --version
+ 1257  cd ATS
+ 1258  ls
+ 1259  whicg mpicc
+ 1260  which mpicc
+ 1261  cd ..
+ 1262  code set_ats_env.sh 
+ 1263  cp set_ats_env.sh set_ats_env_1_6.sh 
+ 1264  code set_ats_env_1_6.sh 
+ 1265  source set_ats_env_1_6.sh 
+ 1266  git clone -b $AMANZI_VERSION http://github.com/amanzi/amanzi $AMANZI_SRC_DIR
+ 1267  ls
+ 1268  cd ATS/
+ 1269  ls
+ 1270  code ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 1271  ls
+ 1272  cd ..
+ 1273  sh ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 1274  source ~/set_ats_env_1_6.sh 
+ 1275  sh ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 1276  cd ATS/
+ 1277  ls
+ 1278  rm -r 1.6/
+ 1279  y
+ 1280  rm -r 1.6/
+ 1281  clear
+ 1282  source ~/set_ats_env_1_6.sh 
+ 1283  conda activate myatsenv
+ 1284  source ~/set_ats_env_1_6.sh 
+ 1285  cd ..
+ 1286  git clone -b $AMANZI_VERSION http://github.com/amanzi/amanzi $AMANZI_SRC_DIR
+ 1287  code ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 1288  bash ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 1289  bash ${AMANZI_SRC_DIR}/build_ATS_generic.sh >out.log_installv1_6 &
+ 1290  tail -f 
+ 1291  touch out.terminal_log
+ 1292  nano out.terminal_log 
+ 1293  explorer.exe .
+ 1294  code ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 1295  bash ${AMANZI_SRC_DIR}/build_ATS_generic.sh >out.log_installv1_6_v1 &
+ 1296  code ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 1297  bash ${AMANZI_SRC_DIR}/build_ATS_generic.sh >out.log_installv1_6_v2 &
+ 1298  explorer.exe ${AMANZI_SRC_DIR}
+ 1299  explorer.exe ${AMANZI_SRC_DIR}/.
+ 1300  code ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 1301  cd ATS
+ 1302  ls
+ 1303  rm -r ats-1.6/
+ 1304  y
+ 1305  rm -r ats-1.6/
+ 1306  ls
+ 1307  cd ..
+ 1308  source ~/set_ats_env_1_6.sh 
+ 1309  git clone -b $AMANZI_VERSION http://github.com/amanzi/amanzi $AMANZI_SRC_DIR
+ 1310  code ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 1311  bash ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 1312  bash ${AMANZI_SRC_DIR}/build_ATS_generic.sh >out.log_amanziupdate &
+ 1313  ats --version
+ 1314  ls
+ 1315  cd 09_arctic_hydrology_transport/
+ 1316  ls
+ 1317  cd run/
+ 1318  ls
+ 1319  rm *
+ 1320  ats ../permafrost-transect-transport.xml 
+ 1321  cd  $ATS_SRC_DIR/tools/input_converters
+ 1322  ls
+ 1323  nano xml-1.5-1.6.py 
+ 1324  code xml-1.5-1.6.py 
+ 1325  cd ~/ats-demos/09_arctic_hydrology_transport/
+ 1326  ls
+ 1327  python ${ATS_SRC_DIR}/tools/input_converters/xml-1.5-1.6.py permafrost-transect-transport.xml -o permafrost-transect-transport-16.xml
+ 1328  cd run
+ 1329  ats ../permafrost-transect-transport-16.xml 
+ 1330  code ../permafrost-transect-transport-16.xml 
+ 1331  ats ../permafrost-transect-transport-16.xml 
+ 1332  ats ../permafrost-transect-transport.xml
+ 1333  code ../permafrost-transect-transport.xml
+ 1334  ats ../permafrost-transect-transport.xml
+ 1335  cd ../..
+ 1336  ls
+ 1337  cd 06_arctic_hydrology/
+ 1338  ls
+ 1339  cd run
+ 1340  mkdir run
+ 1341  cd run/
+ 1342  ats ../permafrost_transect.xml 
+ 1343  code ../permafrost_transect.xml 
+ 1344  cd ../../09_arctic_hydrology_transport/run/
+ 1345  ats ../permafrost-transect-transport.xml
+ 1346  ls ../
+ 1347  cd data
+ 1348  ls ../data/
+ 1349  ats ../permafrost-transect-transport.xml
+ 1350  explorer.exe .
+ 1351  ats ../permafrost-transect-transport.xml
+ 1352  cd ..
+ 1353  ls
+ 1354  cd ..
+ 1355  ls
+ 1356  cd 08_integrated_hydro_transport/
+ 1357  ls
+ 1358  cd data/
+ 1359  ls
+ 1360  cd ..
+ 1361  ls
+ 1362  code hillslope.xml 
+ 1363  cd ../09_arctic_hydrology_transport/run/
+ 1364  ats ../permafrost-transect-transport.xml 
+ 1365  cd ../..
+ 1366  ls
+ 1367  cd 13_integrated_hydro_reactive_transport/
+ 1368  ls
+ 1369  cd data/
+ 1370  ls
+ 1371  cd ..
+ 1372  ls
+ 1373  cd mesh/
+ 1374  ls
+ 1375  cd ..
+ 1376  ls
+ 1377  code hillslope_calcite_crunch_sigmoid.xml 
+ 1378  cd ../09_arctic_hydrology_transport/
+ 1379  ls
+ 1380  code permafrost-transect-transport-16.xml 
+ 1381  cd run/
+ 1382  ats ../permafrost-transect-transport.xml 
+ 1383  cd 
+ 1384  ls
+ 1385  rm out.*
+ 1386  ls
+ 1387  module avail 
+ 1388  cd modules/ats/
+ 1389  code master 
+ 1390  cd
+ 1391  cd /mnt/
+ 1392  ls
+ 1393  cd box/
+ 1394  ls
+ 1395  ls -al
+ 1396  explorer.exe .
+ 1397  cd
+ 1398  cd /mnt/
+ 1399  ls
+ 1400  cd wsl
+ 1401  ls
+ 1402  cd ../wslg/
+ 1403  ls
+ 1404  cd ..
+ 1405  ls
+ 1406  cd c
+ 1407  ls
+ 1408  c
+ 1409  ssh nm32873@grace.ae.utexas.edu
+ 1410  ats --version
+ 1411  module load master
+ 1412  ats --version
+ 1413  conda activate myatsenv2
+ 1414  pwd ${ATS_SRC_DIR}
+ 1415  cd ${ATS_SRC_DIR}
+ 1416  echo ${ATS_SRC_DIR}
+ 1417  module avail
+ 1418  cp modules/ats/master modules/ats/v1.6
+ 1419  code modules/ats/v1.6 
+ 1420  cd ATS/ats-1.6/
+ 1421  code ~/set_ats_env_1_6.sh 
+ 1422  cd ..
+ 1423  ls
+ 1424  cd ..
+ 1425  ls
+ 1426  export MODULEPATH=$MODULEPATH:$HOME/modules
+ 1427  source ~/.bashrc
+ 1428  ats --version
+ 1429  module load ats/v1.6 
+ 1430  ats --version
+ 1431  module unload ats --version
+ 1432  module unload ats/v1.6 
+ 1433  ats --version
+ 1434  module load master
+ 1435  ats --version
+ 1436  module unload master
+ 1437  module avail
+ 1438  cd ats-demos
+ 1439  cd 09_arctic_hydrology_transport/
+ 1440  module load master
+ 1441  ls
+ 1442  cd run/
+ 1443  ats ../permafrost-transect-transport.xml 
+ 1444  ls
+ 1445  rm *
+ 1446  cd ..
+ 1447  ls
+ 1448  rm permafrost-transect-transport-16.xml 
+ 1449  mv permafrost-transect-transport.xml permafrost-transect-transport_v1_6.xml 
+ 1450  explorer.exe .
+ 1451  cd run/
+ 1452  ats ../permafrost-transect-transport.xml
+ 1453  code ../permafrost-transect-transport.xml
+ 1454  code ../permafrost-transect-transport_v1_6.xml 
+ 1455  ats ../permafrost-transect-transport.xml
+ 1456  cd ..
+ 1457  ls
+ 1458  mv permafrost-transect-transport.xml permafrost-transect-transport_v1_5_dev.xml
+ 1459  code permafrost-transect-transport_v1_5_dev.xml 
+ 1460  ats --version
+ 1461  module unload ats/master
+ 1462  module load ats/v1.6 
+ 1463  cd run/
+ 1464  ats ../permafrost-transect-transport_v1_6.xml 
+ 1465  module unload ats/v1.6 
+ 1466  module load master
+ 1467  ats --version
+ 1468  ats ../permafrost-transect-transport_v1_6.xml 
+ 1469  ats ../permafrost-transect-transport_v1_5_dev.xml 
+ 1470  ats --version
+ 1471  module unload master 
+ 1472  module load master
+ 1473  ats ../permafrost-transect-transport_v1_5_dev.xml 
+ 1474  ats ../permafrost-transect-transport_v1_5_dev.xml >out.log &
+ 1475  nano out.log 
+ 1476  code out.log 
+ 1477  module unload master 
+ 1478  module load ats/v1.6 
+ 1479  ats --version
+ 1480  ats ../permafrost-transect-transport_v1_6.xml 
+ 1481  ats ../permafrost-transect-transport_v1_6.xml >out.log_v1_6
+ 1482  code out.log_v1_6 
+ 1483  code out.log
+ 1484  ats --version
+ 1485  module unload ats/v1.6 
+ 1486  module load master 
+ 1487  ls
+ 1488  ats ../permafrost-transect-transport_v1_5_dev.xml 
+ 1489  ats --version
+ 1490  ats ../permafrost-transect-transport_v1_5_dev.xml 
+ 1491  code ../../06_arctic_hydrology/permafrost_column.xml 
+ 1492  cp ../../06_arctic_hydrology/data/spinup-10yr.h5 ../data/
+ 1493  ats ../permafrost-transect-transport_v1_5_dev.xml 
+ 1494  cd ..
+ 1495  mkdir runv1_6
+ 1496  cd runv1_6/
+ 1497  ats --version
+ 1498  module unload master
+ 1499  module load ats/v1.6 
+ 1500  ats --version
+ 1501  ats ../permafrost-transect-transport_v1_6.xml 
+ 1502  python ${AMANZI_SRC_DIR}
+ 1503  python ${AMANZI_SRC_DIR}/tools/input_converters/xml1.5-1.6.py ../permafrost-transect-transport_v1_5_dev.xml -o permafrost_transport_v1_6_conv.xml
+ 1504  python ${AMANZI_SRC_DIR}/tools/input_converters/xml-1.5-1.6.py ../permafrost-transect-transport_v1_5_dev.xml -o permafrost_transport_v1_6_conv.xml
+ 1505  python ${ATS_SRC_DIR}/tools/input_converters/xml-1.5-1.6.py ../permafrost-transect-transport_v1_5_dev.xml -o permafrost_transport_v1_6_conv.xml
+ 1506  ls
+ 1507  mv permafrost_transport_v1_6_conv.xml ../
+ 1508  ats ../permafrost_transport_v1_6_conv.xml 
+ 1509  code ../permafrost_transport_v1_6_conv.xml \
+ 1510  code ../permafrost_transport_v1_6_conv.xml
+ 1511  ats ../permafrost_transport_v1_6_conv.xml 
+ 1512  cd ..
+ 1513  ls
+ 1514  ats --version
+ 1515  cd runv1_6/
+ 1516  ats ../permafrost_transport_v1_6_conv.xml
+ 1517  ats ../permafrost_transport_v1_6_converted.xml 
+ 1518  code ${ATS_SRC_DIR}/src/pks/mpc/mpc_flow_transport.cc
+ 1519  ats ../permafrost_transport_v1_6.xml 
+ 1520  cd ..
+ 1521  ls
+ 1522  cd runv1_6/
+ 1523  ats ../permafrost_transport_v1_6_converted.xml 
+ 1524  ats ../permafrost-transect-transport_v1_6.xml 
+ 1525  cd ..
+ 1526  ls
+ 1527  code permafrost_transport_v1_6_converted.xml 
+ 1528  cd runv1_6/
+ 1529  ats ../permafrost_transport_v1_6_converted.xml 
+ 1530  cd ..
+ 1531  ls
+ 1532  mv permafrost_transport_v1_6_converted.xml permafrost-transect-transport_v1_6_converted.xml 
+ 1533  ls
+ 1534  explorer.exe .
+ 1535  ls
+ 1536  ats --version
+ 1537  module unload ats/v1.6 
+ 1538  module load master
+ 1539  ats --version
+ 1540  explorer.exe .
+ 1541  ls
+ 1542  code permafrost-transect-transport_v1_5_dev.xml 
+ 1543  ls
+ 1544  cd data/
+ 1545  ls
+ 1546  cd ..
+ 1547  comnda activate myatsenv
+ 1548  conda activate myatsenv
+ 1549  ats --version
+ 1550  echo ${ATS_SRC_DIR}
+ 1551  code .
+ 1552  ssh nm32873@grace.ae.utexas.edu
+ 1553  cd ats-short-course/
+ 1554  docker pull metsi/ats-short-course:latest
+ 1555  ~
+ 1556  docker run -it -v $(pwd):/home/ats_sc_user/short-course:delegated -w /home/ats_sc_user/short-course -p 8899:8899 metsi/ats-short-course:latest
+ 1557  sudo docker run -it -v $(pwd):/home/ats_sc_user/short-course:delegated -w /home/ats_sc_user/short-course -p 8899:8899 metsi/ats-short-course:latest
+ 1558  docker run -it -v $(pwd):/home/ats_sc_user/short-course:delegated -w /home/ats_sc_user/short-course -p 8899:8899 metsi/ats-short-course:latest
+ 1559  sudo docker run -it -v $(pwd):/home/ats_sc_user/short-course:delegated -w /home/ats_sc_user/short-course -p 8899:8899 metsi/ats-short-course:latest
+ 1560  docker run -u root -it -v $(pwd):/home/ats_sc_user/short-course:delegated -w /home/ats_sc_user/short-course -p 8899:8899 metsi/ats-short-course:latest
+ 1561  ssh nm32873@grace.ae.utexas.edu
+ 1562  ats --version
+ 1563  module load v1.6
+ 1564  ats --version
+ 1565  module load master
+ 1566  ats --version
+ 1567  ls
+ 1568  cd ats-demos
+ 1569  ls
+ 1570  git pull
+ 1571  code run_demos.py 
+ 1572  conda activate myatsenv
+ 1573  ld
+ 1574  ls
+ 1575  cd 09_arctic_hydrology_transport/
+ 1576  ls
+ 1577  cd runv1_5_dev/
+ 1578  ls
+ 1579  cd ..
+ 1580  ls
+ 1581  touch postprocess.ipynb
+ 1582  code postprocess.ipynb
+ 1583  cd ../13_integrated_hydro_reactive_transport/
+ 1584  ls
+ 1585  ls -al
+ 1586  mkdir run
+ 1587  cd run
+ 1588  mkdir 1d_infiltration_column
+ 1589  cd 1d_infiltration_column
+ 1590  ls
+ 1591  ats --version
+ 1592  ats ../../1d-infiltration-column.xml 
+ 1593  cd ..
+ 1594  rm -rf run
+ 1595  mkdir run_1d_infiltration_column
+ 1596  cd run_1d_infiltration_column
+ 1597  ats ../1d-infiltration-column.xml 
+ 1598  ats --version
+ 1599  module unload
+ 1600  module unload master\
+ 1601  module unload master
+ 1602  module load v1.6
+ 1603  ats --version
+ 1604  ats ../1d-infiltration-column.xml 
+ 1605  pwd
+ 1606  cd /
+ 1607  pwd
+ 1608  cd
+ 1609  clear
+ 1610  cd ..
+ 1611  ls
+ 1612  cd mnt/
+ 1613  ls
+ 1614  cd c
+ 1615  ls
+ 1616  explorer.exe .
+ 1617  df -h .
+ 1618  ls
+ 1619  docker pull metsi/ats-short-course:latest
+ 1620  cd ats-short-course/
+ 1621  ls
+ 1622  docker pull metsi/ats-short-course:latest
+ 1623  cd /data3
+ 1624  ls
+ 1625  ssh nm32873@grace.ae.utexas.edu
+ 1626  module load modules/ats/ats-1.5dev 
+ 1627  module load modules ats-1.5dev 
+ 1628  ats --version
+ 1629  module unload ats-1.5dev 
+ 1630  ats --version
+ 1631  module load v1.6 
+ 1632  ats --version
+ 1633  module unload v1.6 
+ 1634  source ~/set_ats_env
+ 1635  source ~/set_ats_env.sh 
+ 1636  ats --version
+ 1637  ats --versoin
+ 1638  ats --version
+ 1639  source ~/set_ats_env.sh 
+ 1640  ats --version
+ 1641  cd modules/
+ 1642  ls
+ 1643  cd ats
+ 1644  ls
+ 1645  code ~/set_ats_env.sh
+ 1646  module load v1.6
+ 1647  which ats
+ 1648  ls
+ 1649  code ats-1.5dev 
+ 1650  cd 
+ 1651  cd ATS/
+ 1652  ls
+ 1653  cd ../modules/ats/
+ 1654  ls
+ 1655  code ats-1.5dev 
+ 1656  cd ../..
+ 1657  ls
+ 1658  cd modules/
+ 1659  ls
+ 1660  code ~/.bashrc
+ 1661  module avail ats
+ 1662  module load ats-1.5dev 
+ 1663  ats --version
+ 1664  modue avail
+ 1665  module avail
+ 1666  module load v1.
+ 1667  module load v1.6
+ 1668  ats --version
+ 1669  cd ..
+ 1670  source ~/bashrc
+ 1671  source ~/.bashrc
+ 1672  module avail
+ 1673  module load ats/v1.6
+ 1674  module load v1.6
+ 1675  ats --version
+ 1676  source ~/set_ats_env.sh 
+ 1677  ats --version
+ 1678  module load v1.6
+ 1679  w
+ 1680  module load ats-1.5dev
+ 1681  which ats
+ 1682  ls
+ 1683  cd ATS
+ 1684  ls
+ 1685  cd ats-1.5dev/
+ 1686  ls
+ 1687  pwd
+ 1688  source ~/.bashrc
+ 1689  cd
+ 1690  moduleavail
+ 1691  module avail
+ 1692  module load ats-1.5dev
+ 1693  which ats
+ 1694  module load master
+ 1695  ats --version
+ 1696  ls
+ 1697  cd ats-demos
+ 1698  ls
+ 1699  cd 09_arctic_hydrology_transport/
+ 1700  ls
+ 1701  cd runv1_5_dev/
+ 1702  ls
+ 1703  cd ../../13_integrated_hydro_reactive_transport/
+ 1704  ls
+ 1705  cd run_1d_infiltration_column/
+ 1706  ls
+ 1707  cd ..
+ 1708  cd run_1d_infiltration_column/
+ 1709  ls
+ 1710  ats ../1d-infiltration-column.xml 
+ 1711  code ../1d-infiltration-column.xml 
+ 1712  ats --version
+ 1713  module load v1.6
+ 1714  ats --version
+ 1715  ats ../1d-infiltration-column.xml 
+ 1716  code ../1d-infiltration-column.xml 
+ 1717  git pull
+ 1718  cd ${ATS_SRC_DIR}/tools/input_converters/
+ 1719  ls
+ 1720  conda activate myatsenv
+ 1721  python xml-1.5-1.6.py ~/ats-demos/13_integrated_hydro_reactive_transport/1d-infiltration-column.xml -o ~/ats-demos/13_integrated_hydro_reactive_transport/1d-infiltration-column_v16.xml
+ 1722  cd ~/ats-demos/13_integrated_hydro_reactive_transport/
+ 1723  ls
+ 1724  cd run_1d_infiltration_column/
+ 1725  ats ../1d-infiltration-column_v16.xml 
+ 1726  code ../1d-infiltration-column_v16.xml 
+ 1727  ats ../1d-infiltration-column_v16.xml 
+ 1728  ats --version'
+ 1729  ats --version
+ 1730  cd ..
+ 1731  ls
+ 1732  cd 07_reactive_transport/
+ 1733  ls
+ 1734  cd ..
+ 1735  ls
+ 1736  cd 09_arctic_hydrology_transport/
+ 1737  ls
+ 1738  cd runv1_6/
+ 1739  ls
+ 1740  rm *
+ 1741  ats ../permafrost-transect-transport_v1_6.xml 
+ 1742  ats ../permafrost-transect-transport_v1_6.xml >out.log 2> out.err &
+ 1743  ls
+ 1744  vi out.err
+ 1745  cd $AMANZI_SRC_DIR
+ 1746  ls
+ 1747  git branch
+ 1748  git fetch --prune
+ 1749  git merge origin/amanzi-1.6
+ 1750  cd $ATS_SRC_DIR
+ 1751  git fetch --prune
+ 1752  git merge origin/ats-1.6
+ 1753  cd $AMANZI_BUILD_DIR
+ 1754  make -j install
+ 1755  cd ~/ats-demos
+ 1756  ls
+ 1757  cd 06_arctic_hydrology/
+ 1758  ls
+ 1759  cd ..
+ 1760  ls
+ 1761  cd 09_arctic_hydrology_transport/
+ 1762  ls
+ 1763  cd runv1_6/
+ 1764  ls
+ 1765  ats ../permafrost-transect-transport_v1_6.xml >out.log 2>out.err &
+ 1766  ats ../permafrost-transect-transport_v1_6.xml
+ 1767  ats ../permafrost-transect-transport_orig.xml 
+ 1768  ats ../permafrost-transect-transport_v1_6.xml
+ 1769  code ../permafrost-transect-transport_v1_6.xml
+ 1770  cd $AMANZI_SRC_DIR
+ 1771  git checkout master
+ 1772  cd $ATS_SRC_DIR
+ 1773  git checkout master
+ 1774  git pull
+ 1775  cd $AMANZI_BUILD_DIR
+ 1776  make -j install
+ 1777  make -j1 install
+ 1778  cd ~/ats-demos
+ 1779  ls
+ 1780  cd 09_arctic_hydrology_transport/
+ 1781  ls
+ 1782  cd run runv1_6
+ 1783  cd runv1_6
+ 1784  ats ../permafrost-transect-transport_v1_6.xml 
+ 1785  cd $AMANZI_SRC_DIR
+ 1786  git branch
+ 1787  git pull
+ 1788  lldb
+ 1789  gdb
+ 1790  cd $ATS_SRC_DIR
+ 1791  git branch
+ 1792  ..
+ 1793  cd ~/ATS
+ 1794  ls
+ 1795  cd ~
+ 1796  vi set_ats_env.sh 
+ 1797  cd modules/ats/
+ 1798  ls
+ 1799  code v1.6 
+ 1800  cd ..
+ 1801  code ~/.bashrc
+ 1802  vi set_ats_env.sh 
+ 1803  module unload
+ 1804  module unload v1.6 
+ 1805  ats --version
+ 1806  module unload master
+ 1807  ats --version
+ 1808  cd ATS/
+ 1809  ls
+ 1810  mv master ats-1.5dev
+ 1811  ls
+ 1812  module load master
+ 1813  ats --version
+ 1814  cd ..
+ 1815  cd modules/ats/
+ 1816  ls
+ 1817  mv master ats-1.5dev
+ 1818  ls
+ 1819  vode ats-1.5dev 
+ 1820  code ats-1.5dev 
+ 1821  ats --version
+ 1822  module ats-1.5dev 
+ 1823  source ~/.bashrc
+ 1824  module ats-1.5dev 
+ 1825  module load ats-1.5dev 
+ 1826  ats --version
+ 1827  module unload ats-1.5dev 
+ 1828  module load v1.6
+ 1829  ats --version
+ 1830  module unload v1.6 
+ 1831  ls
+ 1832  module load ats-1.5dev 
+ 1833  ls
+ 1834  ats --versionm
+ 1835  ats --version
+ 1836  source ~/set_ats_env
+ 1837  source ~/set_ats_env.sh 
+ 1838  ats --version
+ 1839  code ~/.bashrc
+ 1840  code ~/set_ats_env.sh 
+ 1841  source ~/.bashrc
+ 1842  ls
+ 1843  cd ~/ATS/
+ 1844  ls
+ 1845  rm -r ats-1.6
+ 1846  yy
+ 1847  y
+ 1848  ls
+ 1849  sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+ 1850  conda activate myatsenv
+ 1851  cd ..
+ 1852  code ~/set_ats_env
+ 1853  code ~/set_ats_env.sh 
+ 1854  source ~/set_ats_env.sh 
+ 1855  git clone -b $AMANZI_VERSION http://github.com/amanzi/amanzi $AMANZI_SRC_DIR
+ 1856  code ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 1857  bash ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 1858  ats --version
+ 1859  cd ~/ats-demos
+ 1860  ls
+ 1861  cd 09_arctic_hydrology_transport/
+ 1862  ls
+ 1863  mkdir run1_6
+ 1864  cd run1_6
+ 1865  ats ../permafrost-transect-transport_v1_6.xml 
+ 1866  cd $AMANZI_SRC_DIR
+ 1867  git branch
+ 1868  cd ~/ats-demos
+ 1869  ls
+ 1870  cd 13_integrated_hydro_reactive_transport/
+ 1871  ls
+ 1872  cd run_1d_infiltration_column/
+ 1873  ls
+ 1874  rm *
+ 1875  ats --version
+ 1876  ats ../1d-infiltration-column.xml 
+ 1877  git pull
+ 1878  ats ../1d-infiltration-column_v16.xml 
+ 1879  cd ..
+ 1880  explorer.exe .
+ 1881  cd ../09_arctic_hydrology_transport/
+ 1882  ats ../permafrost-transect-transport_v1_6.xml 
+ 1883  cd run1_6/
+ 1884  ats ../permafrost-transect-transport_v1_6.xml 
+ 1885  ls
+ 1886  rm *
+ 1887  ats ../permafrost-transect-transport_v1_6_updated.xml 
+ 1888  code ../permafrost-transect-transport_v1_6_updated.xml 
+ 1889  ats ../permafrost-transect-transport_v1_6_updated.xml 
+ 1890  ls
+ 1891  cd ..
+ 1892  cd ../13_integrated_hydro_reactive_transport/
+ 1893  ls
+ 1894  cd run_1d_infiltration_column/
+ 1895  ls
+ 1896  rm *
+ 1897  ats ../1d-infiltration-column_v16.xml 
+ 1898  cd ..
+ 1899  cd ../09_arctic_hydrology_transport/
+ 1900  ls
+ 1901  module load v1.5
+ 1902  module load v1.6
+ 1903  which ats
+ 1904  module avail
+ 1905  module load v1.6
+ 1906  which ats
+ 1907  source ~/bashrc
+ 1908  source ~/.bashrc
+ 1909  module load v1.6
+ 1910  which ats
+ 1911  module load v1.6d
+ 1912  which ats
+ 1913  module load ats-1.5dev 
+ 1914  which ats
+ 1915  ats --verison
+ 1916  code ~/set_ats_env.sh 
+ 1917  code ~/modules/ats/ats-1.5dev 
+ 1918  source ~/.bashrc
+ 1919  module avail
+ 1920  module load v1.6
+ 1921  ats --version
+ 1922  which ats
+ 1923  module load v1.6
+ 1924  which ats
+ 1925  module unload v1.6
+ 1926  which ats
+ 1927  module load ats-1.5dev 
+ 1928  which ats
+ 1929  ats --version
+ 1930  source ~/.bashrc
+ 1931  module load v1.6
+ 1932  which ats
+ 1933  ats --version
+ 1934  module unload v1.6 
+ 1935  which ats
+ 1936  module unload ats-1.5dev 
+ 1937  which ats
+ 1938  source ~/.bashrc
+ 1939  which ats
+ 1940  module load ats-1.5dev 
+ 1941  ats --version
+ 1942  source ~/.bashrc
+ 1943  which ats
+ 1944  module load ats-1.5dev 
+ 1945  which ats
+ 1946  source ~/.bashrc
+ 1947  which ats
+ 1948  module load ats-1.5dev 
+ 1949  which ats
+ 1950  whcih ats
+ 1951  which ats
+ 1952  module load ats-1.5dev
+ 1953  which ats
+ 1954  ats --version
+ 1955  code ~/.bashrc
+ 1956  cd ~/ats-demos
+ 1957  ls
+ 1958  cd 09
+ 1959  source ~/set_ats_env.sh
+ 1960  cd 09_arctic_hydrology_transport/
+ 1961  ls
+ 1962  cd run1_6/
+ 1963  ats ../permafrost-transect-transport_v1_6.xml 
+ 1964  which ats
+ 1965  codfe ~/.bashrc
+ 1966  code ~/.bashrc
+ 1967  gdb
+ 1968  sudo apt install gdb
+ 1969  gdb
+ 1970  code ~/modules/ats/v1.6 
+ 1971  cp ~/modules/ats/v1.6 ~/modules/ats/v1.6d 
+ 1972  code ~/modules/ats/v1.6d 
+ 1973  cd /ATS
+ 1974  cd ATS/
+ 1975  ls
+ 1976  cd master/
+ 1977  ls
+ 1978  cd ..
+ 1979  ats --version
+ 1980  module load v1.6
+ 1981  cd ~/ats-demos
+ 1982  cd 13_integrated_hydro_reactive_transport/
+ 1983  ls
+ 1984  mkdir runn
+ 1985  cd runn
+ 1986  ats ../1d-infiltration-column_v16.xml 
+ 1987  module load ats-1.5dev 
+ 1988  which ats
+ 1989  cd $ATS_SRC_DIR
+ 1990  ls
+ 1991  cd src
+ 1992  ls
+ 1993  grep "overland flow has no initial condition parameter list" -r
+ 1994  gdb $(which ats)
+ 1995  cd ~/ats-demos/13_integrated_hydro_reactive_transport/run_1d_v1_5dev/
+ 1996  gdb $(which ats)
+ 1997  ats ../1d-infiltration-column_v15.xml 
+ 1998  module load v1.6
+ 1999  code ${AMANZI_SRC_DIR}/build_ATS_generic.sh
+ 2000  module load ats-1.5dev 
+ 2001  ls
+ 2002  cd imnavait_2D/
+ 2003  ls
+ 2004  git pull
+ 2005  cd files_
+ 2006  cd files_office/
+ 2007  ls
+ 2008  cd ..
+ 2009  ls
+ 2010  cd ..
+ 2011  ls
+ 2012  rm -rf PIN_course/
+ 2013  rm -rf GLDAS_snow/
+ 2014  rm -rf files_server/
+ 2015  vf imnavait_2D/
+ 2016  ls
+ 2017  cd imnavait_2D/
+ 2018  ls
+ 2019  gcc --version
+ 2020  which gcc
+ 2021  gfortran --version
+ 2022  which gfortran
+ 2023  mpicc --version
+ 2024  ls
+ 2025  ats --verison
+ 2026  module purge
+ 2027  module load ats-1.5dev 
+ 2028  which ats
+ 2029  ats --version
+ 2030  ls
+ 2031  cd files_office
+ 2032  ls
+ 2033  cd inputs/
+ 2034  ls
+ 2035  cd ..
+ 2036  ls
+ 2037  cd data
+ 2038  ls
+ 2039  explorer.exe 
+ 2040  explorer.exe .
+ 2041  cd ..
+ 2042  ls
+ 2043  cd inputs/
+ 2044  ls
+ 2045  cp ../../files_server/v5_1/inputs/
+ 2046  cp ../../files_server/v5_1/inputs/transect_spinup_imnavait_ws_1981_2020_ABoVE_DAAC_snow_rain_albdo_AllOcon.xml .
+ 2047  code transect_spinup_imnavait_ws_1981_2020_ABoVE_DAAC_snow_rain_albdo_AllOcon.xml 
+ 2048  mv transect_spinup_imnavait_ws_1981_2020_ABoVE_DAAC_snow_rain_albdo_AllOcon.xml transect_imnavait_transport_1981_2020_test.xml
+ 2049  code transect_imnavait_transport_1981_2020_test.xml 
+ 2050  cp ../../files_server/v5_1/notebooks/data_processing/gen_imnavait_transect_v2.ipynb 
+ 2051  cp ../../files_server/v5_1/notebooks/data_processing/gen_imnavait_transect_v2.ipynb ../notebooks/
+ 2052  cp ../../files_server/v5_1/notebooks/data_processing/gen_column_imnavait_v2.ipynb ../notebooks/
+ 2053  cd ..
+ 2054  ls
+ 2055  explorer.exe .
+ 2056  ls
+ 2057  cd permafrost_transport/
+ 2058  ls
+ 2059  mkdir run
+ 2060  ls
+ 2061  cd notebooks/
+ 2062  ls
+ 2063  cp gen_imnavait_transect_v2.ipynb gen_imnavait_transect_coarse.ipynb
+ 2064  code gen_imnavait_transect_coarse.ipynb 
+ 2065  conda activate myatsenv
+ 2066  code gen_imnavait_transect_coarse.ipynb 
+ 2067  code .
+ 2068  cd ..
+ 2069  code .
+ 2070  ls
+ 2071  cd run
+ 2072  mkdir run1
+ 2073  cd run1
+ 2074  ats --version
+ 2075  ats ../../inputs/transect_imnavait_transport_1981_2020_test.xml
+ 2076  explorer.exe .
+ 2077  ats ../../inputs/transect_imnavait_transport_1981_2020_test.xml
+ 2078  ls
+ 2079  ats --version
+ 2080  module purge
+ 2081  module load v1.6
+ 2082  ats --version
+ 2083  ats ../../inputs/transect_imnavait_transport_1981_2020_test.xml
+ 2084  cd ..
+ 2085  ls
+ 2086  cd ..
+ 2087  ls
+ 2088  cd inputs/
+ 2089  ls
+ 2090  ls -al
+ 2091  mv transect_imnavait_transport_1981_2020_test.xml transect_imnavait_transport_1981_2020_v1_5dev.xml
+ 2092  ls -al
+ 2093  cp ~/ats-demos/09_arctic_hydrology_transport/permafrost-transect-transport_v1_6_correct.xml transect_imnavait_transport_test_v6_1.xml
+ 2094  code transect_imnavait_transport_test_v6_1.xml 
+ 2095  cd ../run/run1/
+ 2096  ats --version
+ 2097  ats ../../inputs/transect_imnavait_transport_test_v6_1.xml 
+ 2098  ls
+ 2099  ats --version
+ 2100  ats ../../inputs/transect_imnavait_transport_test_v6_1.xml 
+ 2101  rm *
+ 2102  ats ../../inputs/transect_imnavait_transport_test_v6_1.xml 
+ 2103  module load v1.6d 
+ 2104  gdb
+ 2105  ats ../../inputs/transect_imnavait_transport_test_v6_1.xml 
+ 2106  ls ..
+ 2107  ls ../..
+ 2108  ls ../../data/
+ 2109  ats ../../inputs/transect_imnavait_transport_test_v6_1.xml 
+ 2110  ls ../..
+ 2111  ls ../../data/
+ 2112  ats ../../inputs/transect_imnavait_transport_test_v6_1.xml 
+ 2113  module purge
+ 2114  module load ats-1.5dev 
+ 2115  ats ../../inputs/transect_imnavait_transport_1981_2020_v1_5dev.xml 
+ 2116  module purge
+ 2117  module load v1.6
+ 2118  which ats
+ 2119  ats ../../inputs/transect_imnavait_transport_test_v6_1.xml 
+ 2120  module load v1.6d 
+ 2121  gdb
+ 2122  gdb $(which ats)
+ 2123  history >debug_history.log
