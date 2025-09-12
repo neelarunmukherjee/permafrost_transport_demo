@@ -1112,11 +1112,9 @@
 
   <ParameterList name="observations" type="ParameterList">
     <ParameterList name="observation file" type="ParameterList">
-      <Parameter name="write interval" type="int" value="30"/>
+      <Parameter name="write interval" type="int" value="1"/>
       <Parameter name="observation output filename" type="string" value="observation.dat"/>
       <Parameter name="time units" type="string" value="d"/>
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0, 1.0, -1.0}"/>
-      <Parameter name="times start period stop units" type="string" value="d"/>
       <Parameter name="delimiter" type="string" value=" "/>
       <ParameterList name="observed quantities" type="ParameterList">
         <ParameterList name="water content [mol]" type="ParameterList">
