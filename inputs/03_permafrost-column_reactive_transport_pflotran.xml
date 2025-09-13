@@ -486,7 +486,7 @@
       </ParameterList>
 
       <ParameterList name="source terms">
-        <ParameterList name="geochemical">
+        <ParameterList name="geochemical"> <!-- edited till here-->
           <ParameterList name="Source Rainfall">
             <Parameter name="solutes" type="Array(string)" value="{tracer}"/>
             <Parameter name="regions" type="Array(string)" value="{surface domain}"/>
