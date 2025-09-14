@@ -499,15 +499,15 @@
             <Parameter name="ats units [moles/m^3]" type="bool" value="true"/>
           </ParameterList>
 
-          <ParameterList name="Irrigation condition" type="ParameterList">
+          <!-- <ParameterList name="Irrigation condition" type="ParameterList">
             <Parameter name="water source key" type="string" value="surface-irrigation_water_source"/>
             <Parameter name="regions" type="Array(string)" value="{surface domain}"/>
-            <Parameter name="solutes" type="Array(string)" value="{Tracer1,Tracer2}"/>
-            <Parameter name="times" type="Array(double)" value="{19008000.0, 21600000.0}"/> <!--Does this need to match with x below in water-source? -->
+            <Parameter name="solutes" type="Array(string)" value="{Tracer1}"/>
+            <Parameter name="times" type="Array(double)" value="{19008000.0, 21600000.0}"/>
             <Parameter name="geochemical conditions" type="Array(string)" value="{fertilizer,fertilizer}"/>
             <Parameter name="time functions" type="Array(string)" value="{constant}"/>
             <Parameter name="ats units [moles/m^3]" type="bool" value="true"/>
-          </ParameterList>
+          </ParameterList> -->
 
           <!-- <ParameterList name="Source Rainfall">
             <Parameter name="solutes" type="Array(string)" value="{tracer}"/>
@@ -541,7 +541,7 @@
     <ParameterList name="chemistry surface" type="ParameterList">
       <Parameter name="PK type" type="string" value="chemistry alquimia"/>
       <Parameter name="engine" type="string" value="PFloTran"/> <!--declare engine-->
-      <Parameter name="engine input file" type="string" value="../../data/pflotran_dir/tracer-pflotran.in"/>
+      <Parameter name="engine input file" type="string" value="../../data/pflotran_dir/tracer-pflotran_rxn.in"/>
       <Parameter name="domain name" type="string" value="surface"/>
       <Parameter name="saturation liquid key" type="string" value="surface-ponded_depth"/>
       <Parameter name="auxiliary data" type="Array(string)" value="{pH}"/>
@@ -564,7 +564,7 @@
     <ParameterList name="chemistry subsurface" type="ParameterList">
       <Parameter name="PK type" type="string" value="chemistry alquimia"/>
       <Parameter name="engine" type="string" value="PFloTran"/>
-      <Parameter name="engine input file" type="string" value="../../data/pflotran_dir/tracer-pflotran.in"/>
+      <Parameter name="engine input file" type="string" value="../../data/pflotran_dir/tracer-pflotran_rxn.in"/>
       <Parameter name="domain name" type="string" value="domain"/>
       <Parameter name="auxiliary data" type="Array(string)" value="{pH}"/>
       <Parameter name="debug cells" type="Array(int)" value="{0}"/>
@@ -601,7 +601,7 @@
       <!--geochemical conditions are always tied to a water source. Cannot be provided as a mass rate -->
       <ParameterList name="surface-water_source" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="additive evaluator"/>
-        <Parameter name="dependencies" type="Array(string)" value="{surface-precipitation_rain,surface-irrigation_water_source}"/>
+        <Parameter name="dependencies" type="Array(string)" value="{surface-precipitation_rain}"/>
       </ParameterList>
       <!-- <ParameterList name="surface-rain_water_source">
         <Parameter name="evaluator type" type="string" value="independent variable"/>
@@ -619,7 +619,7 @@
           </ParameterList>
         </ParameterList>
       </ParameterList> -->
-      <ParameterList name="surface-irrigation_water_source">
+      <!-- <ParameterList name="surface-irrigation_water_source">
         <Parameter name="evaluator type" type="string" value="independent variable"/>
         <ParameterList name="function">
           <ParameterList name="irrigation source">
@@ -627,14 +627,14 @@
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function">
               <ParameterList name="function-tabular">
-                <Parameter name="x values" type="Array(double)" value="{19008000.0, 21600000.0}"/><!--day220-250-->
+                <Parameter name="x values" type="Array(double)" value="{19008000.0, 21600000.0}"/>
                 <Parameter name="y values" type="Array(double)" value="{8.e-6, 0.0}"/>
                 <Parameter name="forms" type="Array(string)" value="{constant}"/>                
               </ParameterList>
             </ParameterList>
           </ParameterList>
         </ParameterList>
-      </ParameterList>
+      </ParameterList> -->
       <!--alias for reactive transport -->
       <ParameterList name="temperature@reactive_transport_next">
         <Parameter name="evaluator type" type="string" value="alias"/>
