@@ -1,5 +1,6 @@
  WARNING: Card (NONISOTHERMAL) not found in input file.
 "CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
 
  ! ************************************************************************** !
 
@@ -16,6 +17,18 @@
     Molar Mass:   31.9988 [g/mol]
     Debye-Huckel a0:    3.0000 [Angstrom]
 
+  NO3-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   62.0049 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  NO3-                            
+        -1.0000  H+                              
+        -1.0000  H2O                             
+         1.0000  NH3(aq)                         
+         2.0000  O2(g)                           
+      logK:   -62.8645   -56.3035   -48.6988   -41.6846   -34.6926   -29.0797   -24.4213   -20.3964
+
   HCO3-   (redox species)
     Charge:  -1.00
     Molar Mass:   61.0171 [g/mol]
@@ -25,6 +38,17 @@
     Charge:   1.00
     Molar Mass:    1.0079 [g/mol]
     Debye-Huckel a0:    9.0000 [Angstrom]
+
+  N2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:   28.0135 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  N2(aq)                          
+        -3.0000  H2O                             
+         1.5000  O2(g)                           
+         2.0000  NH3(aq)                         
+      logK:  -123.4712  -112.1135   -99.2148   -87.5714   -76.2582   -67.4642   -60.4620   -54.7940
 
 
  Secondary Species:
@@ -59,6 +83,13 @@
          1.0000  H+                              
          1.0000  HCO3-                           
       logK:    -7.6765    -7.8136    -8.0527    -8.3574    -8.7692    -9.2165    -9.7202   -10.3393
+
+  N2(g)*
+    Molar Mass:   44.0098 [g/mol]
+    Gas Reaction: 
+        -1.0000  N2(g)*                          
+         1.0000  N2(aq)                          
+      logK:    -1.0970    -1.4680    -1.7850    -1.9700    -2.0450    -2.0190    -1.9340    -1.8110
 
   O2(g)
     Molar Mass:   31.9988 [g/mol]
@@ -78,6 +109,7 @@
 
  ! ************************************************************************** !
 
+ WARNING: Inhibition species "O2(aq) not found in microbial reaction.
 
  ! ************************************************************************** !
 
@@ -94,6 +126,11 @@
     Molar Mass:   31.9988 [g/mol]
     Debye-Huckel a0:    3.0000 [Angstrom]
 
+  NO3-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   62.0049 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
   HCO3-   (redox species)
     Charge:  -1.00
     Molar Mass:   61.0171 [g/mol]
@@ -103,6 +140,11 @@
     Charge:   1.00
     Molar Mass:    1.0079 [g/mol]
     Debye-Huckel a0:    9.0000 [Angstrom]
+
+  N2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:   28.0135 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
 
 
  Secondary Species:
@@ -137,6 +179,13 @@
          1.0000  HCO3-                           
          1.0000  H+                              
       logK:    -7.6765    -7.8136    -8.0527    -8.3574    -8.7692    -9.2165    -9.7202   -10.3393
+
+  N2(g)*
+    Molar Mass:   44.0098 [g/mol]
+    Gas Reaction: 
+        -1.0000  N2(g)*                          
+         1.0000  N2(aq)                          
+      logK:    -1.0970    -1.4680    -1.7850    -1.9700    -2.0450    -2.0190    -1.9340    -1.8110
 
   O2(g)
     Molar Mass:   31.9988 [g/mol]
@@ -158,10 +207,11 @@
 
 --------------------------------------------------------------------------------
 
-     4  Primary Species
+     6  Primary Species
 
-              DOM1                  O2(aq)                HCO3-               
-              H+                  
+              DOM1                  O2(aq)                NO3-                
+              HCO3-                 H+                    N2(aq)              
+
 
      2  Secondary Complex Species
 
@@ -171,9 +221,10 @@
 
 
 
-     2  Passive Gas Species
+     3  Passive Gas Species
 
-              CO2(g)                O2(g)               
+              CO2(g)                N2(g)*                O2(g)               
+
 
      0  Reference Minerals
 
@@ -191,7 +242,17 @@ Constraint Species: DOM1
 Constraint Species: O2(aq)
 Constraint Species: H+
 Constraint Species: HCO3-
+Constraint Species: NO3-
+Constraint Species: N2(aq)
 Constraint Species: DOM1
 Constraint Species: O2(aq)
 Constraint Species: H+
 Constraint Species: HCO3-
+Constraint Species: NO3-
+Constraint Species: N2(aq)
+Constraint Species: DOM1
+Constraint Species: O2(aq)
+Constraint Species: H+
+Constraint Species: HCO3-
+Constraint Species: NO3-
+Constraint Species: N2(aq)

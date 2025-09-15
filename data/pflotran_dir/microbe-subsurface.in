@@ -51,16 +51,16 @@ PASSIVE_GAS_SPECIES
   CO2(g) 
   O2(g) 
 /
-MINERALS
-    SOM
-/
-MINERAL_KINETICS
-    SOM
-      PREFACTOR
-        RATE_CONSTANT -6.0
-      /
-    /
-/
+# MINERALS
+#     SOM
+# /
+# MINERAL_KINETICS
+#     SOM
+#       PREFACTOR
+#         RATE_CONSTANT -6.0
+#       /
+#     /
+# /
   # DOM aerobic respiration
   MICROBIAL_REACTION
     REACTION 1.0e+00 DOM1  + 1.0e+00 O2(aq)  -> 1.0e+00 HCO3- + 1.0 H+ 
@@ -177,12 +177,12 @@ TRANSPORT_CONDITION initial
   /
 END
 
-# TRANSPORT_CONDITION inlet
-#   TYPE DIRICHLET_ZERO_GRADIENT
-#   CONSTRAINT_LIST
-#     0.d0 fertilizer
-#   /
-# END
+TRANSPORT_CONDITION inlet
+  TYPE DIRICHLET_ZERO_GRADIENT
+  CONSTRAINT_LIST
+    0.d0 fertilizer
+  /
+END
 
 #=========================== IRRIGATION constraint =========================
 # CONSTRAINT fertilizer
@@ -206,9 +206,9 @@ CONSTRAINT oc_rich
     # NO3-                1.0e-10 T
     # N2(aq)              1.0e-10 T
   /
-  MINERALS
-    SOM 1.d-2 1.0d0
-  /
+  # MINERALS
+  #   SOM 1.d-2 1.0d0
+  # /
 END
 
 #===========================  another initial constraint ====================
