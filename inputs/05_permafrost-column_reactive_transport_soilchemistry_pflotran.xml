@@ -493,7 +493,7 @@
             <Parameter name="water source key" type="string" value="surface-precipitation_rain"/>
             <Parameter name="regions" type="Array(string)" value="{surface domain}"/>
             <Parameter name="solutes" type="Array(string)" value="{DOM1,O2(aq),HCO3-,H+}"/>
-            <Parameter name="times" type="Array(double)" value="{0.0, 31536000.0}"/>
+            <Parameter name="times" type="Array(double)" value="{0.0, 8640000.0}"/>
             <Parameter name="geochemical conditions" type="Array(string)" value="{rainfall,rainfall}"/>
             <Parameter name="time functions" type="Array(string)" value="{constant}"/>              
             <Parameter name="ats units [moles/m^3]" type="bool" value="true"/>
@@ -502,8 +502,8 @@
           <!-- <ParameterList name="Irrigation condition" type="ParameterList">
             <Parameter name="water source key" type="string" value="surface-irrigation_water_source"/>
             <Parameter name="regions" type="Array(string)" value="{surface domain}"/>
-            <Parameter name="solutes" type="Array(string)" value="{Tracer1}"/>
-            <Parameter name="times" type="Array(double)" value="{19008000.0, 21600000.0}"/>
+            <Parameter name="solutes" type="Array(string)" value="{DOM1,O2(aq),HCO3-,H+}"/>
+            <Parameter name="times" type="Array(double)" value="{0.0, 8640000.0}"/>
             <Parameter name="geochemical conditions" type="Array(string)" value="{fertilizer,fertilizer}"/>
             <Parameter name="time functions" type="Array(string)" value="{constant}"/>
             <Parameter name="ats units [moles/m^3]" type="bool" value="true"/>
@@ -548,7 +548,7 @@
       <Parameter name="debug cells" type="Array(int)" value="{0}"/>
       <ParameterList name="initial conditions" type="ParameterList">
         <ParameterList name="geochemical conditions" type="ParameterList">
-          <ParameterList name="initial" type="ParameterList">
+          <ParameterList name="rainfall" type="ParameterList">
             <Parameter name="regions" type="Array(string)" value="{surface domain}"/>
           </ParameterList>
         </ParameterList>
@@ -566,15 +566,15 @@
       <Parameter name="engine" type="string" value="PFloTran"/>
       <Parameter name="engine input file" type="string" value="../../data/pflotran_dir/microbe-subsurface.in"/>
       <Parameter name="domain name" type="string" value="domain"/>
-      <!-- <Parameter name="minerals" type="Array(string)" value="{SOM}"/>  -->
       <Parameter name="auxiliary data" type="Array(string)" value="{pH}"/>
+      <Parameter name="minerals" type="Array(string)" value="{SOM}"/> 
       <Parameter name="debug cells" type="Array(int)" value="{0}"/>
       <ParameterList name="initial conditions" type="ParameterList">
         <ParameterList name="geochemical conditions" type="ParameterList">
-          <ParameterList name="oc_rich" type="ParameterList">
+          <ParameterList name="oc_poor" type="ParameterList">
             <Parameter name="regions" type="Array(string)" value="{peat}"/>
           </ParameterList>
-          <ParameterList name="oc_poor" type="ParameterList">
+          <ParameterList name="oc_rich" type="ParameterList">
             <Parameter name="regions" type="Array(string)" value="{mineral}"/>
           </ParameterList>
         </ParameterList>
@@ -590,23 +590,14 @@
 
   <ParameterList name="state" type="ParameterList">
     <ParameterList name="evaluators" type="ParameterList">
-      <!-- multiplies mole fraction by rate constant = k * mole_fraction, hence k in units of 1/s -->
-      <!-- <ParameterList name="tracer_rate" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="multiplicative evaluator" />
-        <Parameter name="coefficient" type="double" value="-1.0e-3" />
-        <Parameter name="dependencies" type="Array(string)" value="{mole_fraction}" />
-      </ParameterList> -->
-      <!-- converts from mole fraction to moles per liter = mole solute/mole water * mol water/m3 water * 1 m3/ 1L -->
-      <!-- <ParameterList name="mols_per_liter" type="ParameterList">
-        <Parameter name="evaluator type" type="string" value="multiplicative evaluator"/>
-        <Parameter name="coefficient" type="double" value="0.001"/>
-        <Parameter name="dependencies" type="Array(string)" value="{mole_fraction, molar_density_liquid}"/>
-      </ParameterList> -->
+
       <!--geochemical conditions are always tied to a water source. Cannot be provided as a mass rate -->
       <ParameterList name="surface-water_source" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="additive evaluator"/>
         <Parameter name="dependencies" type="Array(string)" value="{surface-precipitation_rain}"/>
       </ParameterList>
+
+
       <!-- <ParameterList name="surface-rain_water_source">
         <Parameter name="evaluator type" type="string" value="independent variable"/>
         <ParameterList name="function">
@@ -631,7 +622,7 @@
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function">
               <ParameterList name="function-tabular">
-                <Parameter name="x values" type="Array(double)" value="{19008000.0, 21600000.0}"/>
+                <Parameter name="x values" type="Array(double)" value="{0.0, 8640000.0}"/>
                 <Parameter name="y values" type="Array(double)" value="{8.e-6, 0.0}"/>
                 <Parameter name="forms" type="Array(string)" value="{constant}"/>                
               </ParameterList>
@@ -640,8 +631,8 @@
         </ParameterList>
       </ParameterList> -->
 
-      <!--alias for reactive transport -->
 
+      <!--alias for reactive transport -->
       <ParameterList name="temperature@reactive_transport_next">
         <Parameter name="evaluator type" type="string" value="alias"/>
         <Parameter name="target" type="string" value="temperature"/>
@@ -674,12 +665,7 @@
         <Parameter name="evaluator type" type="string" value="alias"/>
         <Parameter name="target" type="string" value="surface-pressure"/>
       </ParameterList>
-      <ParameterList name="mineral_rate_constant@reactive_transport_current">
-        <Parameter name="evaluator type" type="string" value="alias"/>
-        <Parameter name="target" type="string" value="mineral_rate_constant"/>
-      </ParameterList>
-
-      <!--alias done -->
+      <!-- done -->
       <ParameterList name="water_content" type="ParameterList">
         <Parameter name="evaluator type" type="string" value="liquid+ice water content" />
       </ParameterList>
@@ -1181,41 +1167,8 @@
       <ParameterList name="gravity" type="ParameterList">
         <Parameter name="value" type="Array(double)" value="{ 0, 0,-9.80665}" />
       </ParameterList>
-    </ParameterList>
-    <ParameterList name="model parameters" type="ParameterList">
-      <ParameterList name="land cover types" type="ParameterList">
-        <ParameterList name="surface domain" type="ParameterList">
-          <Parameter name="roughness length of bare ground [m]" type="double" value="0.04" />
-          <Parameter name="roughness length of snow [m]" type="double" value="0.004" />  
-          <Parameter name="snow transition depth [m]" type="double" value="0.02" />
-          <Parameter name="water transition depth [m]" type="double" value="0.02" />
-          <Parameter name="albedo of bare ground [-]" type="double" value="0.135" />
-          <Parameter name="emissivity of bare ground [-]" type="double" value="0.92" />
-        </ParameterList>
-      </ParameterList>
-      <ParameterList name="WRM parameters" type="ParameterList">
-        <ParameterList name="peat" type="ParameterList">
-          <Parameter name="region" type="string" value="peat" />
-          <Parameter name="wrm type" type="string" value="van Genuchten" />
-          <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.0005" />
-          <Parameter name="van Genuchten n [-]" type="double" value="1.39" />
-          <Parameter name="residual saturation [-]" type="double" value="0.05" />
-          <Parameter name="smoothing interval width [saturation]" type="double" value="0.05" />
-          <Parameter name="dessicated zone thickness [m]" type="double" value="0.1" />
-        </ParameterList>
-        <ParameterList name="mineral" type="ParameterList">
-          <Parameter name="region" type="string" value="mineral" />
-          <Parameter name="wrm type" type="string" value="van Genuchten" />
-          <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="2e-05" />
-          <Parameter name="van Genuchten n [-]" type="double" value="1.58" />
-          <Parameter name="residual saturation [-]" type="double" value="0.2" />
-          <Parameter name="smoothing interval width [saturation]" type="double" value="0.05" />
-          <Parameter name="dessicated zone thickness [m]" type="double" value="0.1" />
-        </ParameterList>
-      </ParameterList>
-    </ParameterList>
 
-    <!-- <ParameterList name="mineral_volume_fractions" type="ParameterList">
+      <ParameterList name="mineral_volume_fractions" type="ParameterList">
         <ParameterList name="function" type="ParameterList">
           <ParameterList name="All" type="ParameterList">
             <Parameter name="region" type="string" value="domain"/>
@@ -1267,9 +1220,42 @@
             </ParameterList>
           </ParameterList>
         </ParameterList>
-      </ParameterList> -->
+      </ParameterList>
+    </ParameterList>
 
 
+    <ParameterList name="model parameters" type="ParameterList">
+      <ParameterList name="land cover types" type="ParameterList">
+        <ParameterList name="surface domain" type="ParameterList">
+          <Parameter name="roughness length of bare ground [m]" type="double" value="0.04" />
+          <Parameter name="roughness length of snow [m]" type="double" value="0.004" />  
+          <Parameter name="snow transition depth [m]" type="double" value="0.02" />
+          <Parameter name="water transition depth [m]" type="double" value="0.02" />
+          <Parameter name="albedo of bare ground [-]" type="double" value="0.135" />
+          <Parameter name="emissivity of bare ground [-]" type="double" value="0.92" />
+        </ParameterList>
+      </ParameterList>
+      <ParameterList name="WRM parameters" type="ParameterList">
+        <ParameterList name="peat" type="ParameterList">
+          <Parameter name="region" type="string" value="peat" />
+          <Parameter name="wrm type" type="string" value="van Genuchten" />
+          <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.0005" />
+          <Parameter name="van Genuchten n [-]" type="double" value="1.39" />
+          <Parameter name="residual saturation [-]" type="double" value="0.05" />
+          <Parameter name="smoothing interval width [saturation]" type="double" value="0.05" />
+          <Parameter name="dessicated zone thickness [m]" type="double" value="0.1" />
+        </ParameterList>
+        <ParameterList name="mineral" type="ParameterList">
+          <Parameter name="region" type="string" value="mineral" />
+          <Parameter name="wrm type" type="string" value="van Genuchten" />
+          <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="2e-05" />
+          <Parameter name="van Genuchten n [-]" type="double" value="1.58" />
+          <Parameter name="residual saturation [-]" type="double" value="0.2" />
+          <Parameter name="smoothing interval width [saturation]" type="double" value="0.05" />
+          <Parameter name="dessicated zone thickness [m]" type="double" value="0.1" />
+        </ParameterList>
+      </ParameterList>
+    </ParameterList>
   </ParameterList>
   <ParameterList name="visualization" type="ParameterList">
     <ParameterList name="domain" type="ParameterList">

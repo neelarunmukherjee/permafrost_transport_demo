@@ -1,4 +1,4 @@
-#Description: 1D microbial degradation problem without biomass
+#Description: 1D microbial degradation problem 
 
 SIMULATION
   SIMULATION_TYPE SUBSURFACE
@@ -51,16 +51,16 @@ PASSIVE_GAS_SPECIES
   CO2(g) 
   O2(g) 
 /
-# MINERALS
-#     SOM
-# /
-# MINERAL_KINETICS
-#     SOM
-#       PREFACTOR
-#         RATE_CONSTANT -6.0
-#       /
-#     /
-# /
+MINERALS
+    SOM
+/
+MINERAL_KINETICS
+    SOM
+      PREFACTOR
+        RATE_CONSTANT -6.0
+      /
+    /
+/
   # DOM aerobic respiration
   MICROBIAL_REACTION
     REACTION 1.0e+00 DOM1  + 1.0e+00 O2(aq)  -> 1.0e+00 HCO3- + 1.0 H+ 
@@ -76,26 +76,7 @@ PASSIVE_GAS_SPECIES
       THRESHOLD_CONCENTRATION 1.1e-20
     /
   /
-  # DOM denitrification 
-  # MICROBIAL_REACTION
-  #   REACTION 1.0e+00 DOM1  + 0.8e+00 NO3- + 0.8 H+  -> 1.0 HCO3- + 1.0 H+  + 0.4 N2(aq) 
-  #   RATE_CONSTANT       4.0e-08
-  #   MONOD
-  #     SPECIES_NAME       NO3-  
-  #     HALF_SATURATION_CONSTANT 1.0e-05
-  #     THRESHOLD_CONCENTRATION 1.1e-20
-  #   /
-  #   MONOD
-  #     SPECIES_NAME        DOM1
-  #     HALF_SATURATION_CONSTANT 1.0e-05
-  #     THRESHOLD_CONCENTRATION 1.e-20
-  #   /
-  #    INHIBITION
-  #     SPECIES_NAME        O2(aq)
-  #     TYPE MONOD
-  #     INHIBITION_CONSTANT 1.0e-07
-  #   /
-#  / 
+
 
   LOG_FORMULATION
   ACTIVITY_COEFFICIENTS TIMESTEP
@@ -125,7 +106,7 @@ FLUID_PROPERTY
 END
 
 #=========================== material properties ==============================
-MATERIAL_PROPERTY soil1
+MATERIAL_PROPERTY peat
   ID 1
   POROSITY 0.25d0
   TORTUOSITY 1.d0
@@ -184,17 +165,6 @@ TRANSPORT_CONDITION inlet
   /
 END
 
-#=========================== IRRIGATION constraint =========================
-# CONSTRAINT fertilizer
-#   CONCENTRATIONS
-#     DOM1                1.0e-10 T
-#     O2(aq)              0.21 G O2(g) 
-#     H+                  6.0 P
-#     HCO3-               400e-6 G CO2(g)
-#     NO3-                2.0e-4  T
-#     N2(aq)              0.78 G N2(g)* 
-#   /
-# END
 
 #=========================== initial constraint ============================
 CONSTRAINT oc_rich
@@ -203,12 +173,10 @@ CONSTRAINT oc_rich
     O2(aq)              1.0e-10 T 
     H+                  6.0 P
     HCO3-               400e-6 G CO2(g)
-    # NO3-                1.0e-10 T
-    # N2(aq)              1.0e-10 T
   /
-  # MINERALS
-  #   SOM 1.d-2 1.0d0
-  # /
+  MINERALS
+    SOM 1.d-2 1.0d0
+  /
 END
 
 #===========================  another initial constraint ====================
@@ -218,8 +186,6 @@ CONSTRAINT oc_poor
     O2(aq)              1.0e-10 T 
     H+                  6.0 P
     HCO3-               400e-6 G CO2(g)
-    # NO3-                1.0e-10  T
-    # N2(aq)              1.0e-10  T
   /
 END
 

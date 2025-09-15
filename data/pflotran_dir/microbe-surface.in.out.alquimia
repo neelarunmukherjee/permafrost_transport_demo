@@ -190,12 +190,12 @@ Constraint Species: DOM1
 Constraint Species: O2(aq)
 Constraint Species: H+
 Constraint Species: HCO3-
-processing : oc_poor
-Looking for pflotran constraint : oc_poor
-initializing constraint : oc_poor
-equilibrate constraint : oc_poor
+processing : oc_rich
+Looking for pflotran constraint : oc_rich
+initializing constraint : oc_rich
+equilibrate constraint : oc_rich
 
-  Constraint: oc_poor
+  Constraint: oc_rich
   ----------------------------------------------------------------------------
         iterations:    16
                 pH:   6.0000
@@ -224,16 +224,21 @@ equilibrate constraint : oc_poor
   CO2(aq)                   1.3588E-05  1.0000E+00   -6.3447E+00
   OH-                       1.0136E-08  9.9778E-01    1.3995E+01
 
+  mineral                             log SI       Affinity     log K
+                                                   [kJ/mol]
+  ----------------------------------------------------------------------------
+  SOM                                -109.9993 627876.8186    1.0000E+02
+
   gas              par pres [bars]  conc [mol/m^3]  log K
   ----------------------------------------------------------------------------
   CO2(g)           4.0000E-04       1.6136E-02      -7.8136E+00
   O2(g)            7.9251E-08       3.1970E-06      -2.8983E+00
-processing : oc_rich
-Looking for pflotran constraint : oc_rich
-initializing constraint : oc_rich
-equilibrate constraint : oc_rich
+processing : oc_poor
+Looking for pflotran constraint : oc_poor
+initializing constraint : oc_poor
+equilibrate constraint : oc_poor
 
-  Constraint: oc_rich
+  Constraint: oc_poor
   ----------------------------------------------------------------------------
         iterations:     9
                 pH:   6.0000
@@ -255,3 +260,57 @@ equilibrate constraint : oc_rich
   DOM1                      1.0017E-10  1.0028E-10  1.0000E+00    total aq
   O2(aq)                    1.0017E-10  1.0028E-10  1.0000E+00    total aq
   HCO3-                     6.1578E-06  1.9768E-05  9.9778E-01    CO2(g)
+  H+                        1.0022E-06  1.4597E-05  9.9779E-01    pH
+
+  complex                   molality    act coef        logK
+  ----------------------------------------------------------------------------
+  CO2(aq)                   1.3588E-05  1.0000E+00   -6.3447E+00
+  OH-                       1.0136E-08  9.9778E-01    1.3995E+01
+
+  mineral                             log SI       Affinity     log K
+                                                   [kJ/mol]
+  ----------------------------------------------------------------------------
+  SOM                                -109.9993 627876.5911    1.0000E+02
+
+  gas              par pres [bars]  conc [mol/m^3]  log K
+  ----------------------------------------------------------------------------
+  CO2(g)           4.0000E-04       1.6136E-02      -7.8136E+00
+  O2(g)            7.9258E-08       3.1973E-06      -2.8983E+00
+processing : rainfall
+Looking for pflotran constraint : rainfall
+initializing constraint : rainfall
+equilibrate constraint : rainfall
+
+  Constraint: rainfall
+  ----------------------------------------------------------------------------
+        iterations:    16
+                pH:   6.0000
+                pe:  14.7121
+                Eh:   0.8704
+    ionic strength:   3.5851E-06 [mol/L]
+    charge balance:  -5.1569E-06
+          pressure:   0.0000E+00 [Pa]
+       temperature:    25.00 [C]
+       density H2O:   997.16 [kg/m^3]
+ ln / activity H2O:   0.0000E+00  1.0000E+00    [---]
+ mole fraction H2O:   9.9999E-01    [---]
+ mass fraction H2O:   9.9999E-01    [---]
+  ----------------------------------------------------------------------------
+
+  primary                   free        total
+  species                   molal       molal       act coef     constraint
+  ----------------------------------------------------------------------------
+  DOM1                      1.0017E-10  1.0028E-10  1.0000E+00    total aq
+  O2(aq)                    2.6541E-04  2.6571E-04  1.0000E+00    O2(g)
+  HCO3-                     6.1578E-06  1.9768E-05  9.9778E-01    CO2(g)
+  H+                        1.0022E-06  1.4597E-05  9.9779E-01    pH
+
+  complex                   molality    act coef        logK
+  ----------------------------------------------------------------------------
+  CO2(aq)                   1.3588E-05  1.0000E+00   -6.3447E+00
+  OH-                       1.0136E-08  9.9778E-01    1.3995E+01
+
+  gas              par pres [bars]  conc [mol/m^3]  log K
+  ----------------------------------------------------------------------------
+  CO2(g)           4.0000E-04       1.6136E-02      -7.8136E+00
+  O2(g)            2.1000E-01       8.4713E+00      -2.8983E+00

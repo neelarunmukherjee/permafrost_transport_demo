@@ -1,6 +1,7 @@
  WARNING: Card (NONISOTHERMAL) not found in input file.
 "CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
 "CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"SOMPREFACTOR RATE UNITS" set to default value.
 
  ! ************************************************************************** !
 
@@ -99,7 +100,15 @@
       logK:    -2.6567    -2.8983    -3.0633    -3.1076    -3.0354    -2.8742    -2.6488    -2.3537
 
 
- Minerals: None
+ Minerals:
+  SOM
+    Molar Mass:  180.1566 [g/mol]
+    Molar Volume:  1.0000E-04 [m^3/mol]
+    Mineral Reaction: 
+        -1.0000  SOM                             
+         1.0000  DOM1                            
+      logK:   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000
+
 
  Surface Complexation Reactions: None
 
@@ -195,7 +204,15 @@
       logK:    -2.6567    -2.8983    -3.0633    -3.1076    -3.0354    -2.8742    -2.6488    -2.3537
 
 
- Minerals: None
+ Minerals:
+  SOM
+    Molar Mass:  180.1566 [g/mol]
+    Molar Volume:  1.0000E-04 [m^3/mol]
+    Mineral Reaction: 
+        -1.0000  SOM                             
+         1.0000  DOM1                            
+      logK:   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000
+
 
  Surface Complexation Reactions: None
 
@@ -226,13 +243,13 @@
               CO2(g)                N2(g)*                O2(g)               
 
 
-     0  Reference Minerals
+     1  Reference Minerals
 
+              SOM                 
 
+     1  Kinetic Mineral Reactions
 
-     0  Kinetic Mineral Reactions
-
-
+              SOM                 
 
      0  Ion Exchange Reactions
 
@@ -250,6 +267,8 @@ Constraint Species: H+
 Constraint Species: HCO3-
 Constraint Species: NO3-
 Constraint Species: N2(aq)
+Constraint Minerals: SOM
+"SOM SPECIFIC SURFACE_AREA UNITS" set to default value.
 Constraint Species: DOM1
 Constraint Species: O2(aq)
 Constraint Species: H+

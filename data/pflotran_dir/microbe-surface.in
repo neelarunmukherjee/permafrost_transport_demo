@@ -34,18 +34,14 @@ CHEMISTRY
 PRIMARY_SPECIES
   DOM1
   O2(aq)
-  # NO3- 
   HCO3-
   H+ 
-  # N2(aq) 
 /
 DECOUPLED_EQUILIBRIUM_REACTIONS
   DOM1
   O2(aq)
-  # NO3- 
   HCO3-
   H+ 
-  # N2(aq) 
 /
 SECONDARY_SPECIES
   OH-
@@ -53,7 +49,6 @@ SECONDARY_SPECIES
 /
 PASSIVE_GAS_SPECIES 
   CO2(g) 
-  # N2(g)* 
   O2(g) 
 /
 
@@ -137,25 +132,6 @@ TRANSPORT_CONDITION initial
   /
 END
 
-# TRANSPORT_CONDITION inlet
-#   TYPE DIRICHLET_ZERO_GRADIENT
-#   CONSTRAINT_LIST
-#     0.d0 fertilizer
-#   /
-# END
-
-#=========================== IRRIGATION constraint =========================
-# CONSTRAINT fertilizer
-#   CONCENTRATIONS
-#     DOM1                1.0e-10 T
-#     O2(aq)              0.21 G O2(g) 
-#     H+                  6.0 P
-#     HCO3-               400e-6 G CO2(g)
-#     NO3-                2.0e-4  T
-#     N2(aq)              0.78 G N2(g)* 
-#   /
-# END
-
 #=========================== rainfall/initial constraint ====================
 CONSTRAINT rainfall
   CONCENTRATIONS
@@ -163,8 +139,6 @@ CONSTRAINT rainfall
     O2(aq)              0.21 G O2(g) 
     H+                  6.0 P
     HCO3-               400e-6 G CO2(g)
-    # NO3-                2.0e-6 T
-    # N2(aq)              0.78 G N2(g)* 
   /
 END
 
