@@ -236,36 +236,36 @@ MINERAL_KINETICS
   #     INHIBITION_CONSTANT 1.00e-05
   #   /
   # /
-  # # Acetaclastic methanogenesis to CH4 inhibited by O2, Fe(III), and H+
-  # MICROBIAL_REACTION
-  #   REACTION 1.00e+00 Acetate-  + 1.00e+00 H2O  -> 1.00e+00 CH4(aq)  + 1.00e+00 HCO3-  + 1.00e+00 Tracer 
-  #   RATE_CONSTANT       1.50e-08
-  #   MONOD
-  #     SPECIES_NAME        Acetate-
-  #     HALF_SATURATION_CONSTANT 4.00e-02
-  #     THRESHOLD_CONCENTRATION 1.10e-15
-  #   /
-  #   INHIBITION
-  #     SPECIES_NAME        O2(aq)
-  #     TYPE MONOD
-  #     INHIBITION_CONSTANT 1.00e-05
-  #   /
-  #   INHIBITION
-  #     SPECIES_NAME        Fe+++
-  #     TYPE MONOD
-  #     INHIBITION_CONSTANT 1.00e+00
-  #   /
-  #   INHIBITION
-  #     SPECIES_NAME        H+
-  #     TYPE MONOD
-  #     INHIBITION_CONSTANT 2.88e-06
-  #   /
-  #   INHIBITION
-  #     SPECIES_NAME        H+
-  #     TYPE INVERSE_MONOD
-  #     INHIBITION_CONSTANT 2.88e-06
-  #   /
-  # /
+  # Acetaclastic methanogenesis to CH4 inhibited by O2, Fe(III), and H+
+  MICROBIAL_REACTION
+    REACTION 1.00e+00 Acetate-  + 1.00e+00 H2O  -> 1.00e+00 CH4(aq)  + 1.00e+00 HCO3-  + 1.00e+00 Tracer 
+    RATE_CONSTANT       1.50e-08
+    MONOD
+      SPECIES_NAME        Acetate-
+      HALF_SATURATION_CONSTANT 4.00e-02
+      THRESHOLD_CONCENTRATION 1.10e-15
+    /
+    INHIBITION
+      SPECIES_NAME        O2(aq)
+      TYPE MONOD
+      INHIBITION_CONSTANT 1.00e-05
+    /
+    # INHIBITION
+    #   SPECIES_NAME        Fe+++
+    #   TYPE MONOD
+    #   INHIBITION_CONSTANT 1.00e+00
+    # /
+    INHIBITION
+      SPECIES_NAME        H+
+      TYPE MONOD
+      INHIBITION_CONSTANT 2.88e-06
+    /
+    INHIBITION
+      SPECIES_NAME        H+
+      TYPE INVERSE_MONOD
+      INHIBITION_CONSTANT 2.88e-06
+    /
+  /
 
 
 
