@@ -5,6 +5,10 @@
 "CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
 "CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
 "CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
 "SOMPREFACTOR RATE UNITS" set to default value.
 
  ! ************************************************************************** !
@@ -163,6 +167,7 @@
  WARNING: Inhibition species "Fe+++ not found in microbial reaction.
  WARNING: Inhibition species "H+ not found in microbial reaction.
  WARNING: Inhibition species "H+ not found in microbial reaction.
+ WARNING: Inhibition species "O2(aq) not found in microbial reaction.
 
  ! ************************************************************************** !
 
