@@ -214,12 +214,12 @@ TRANSPORT_CONDITION initial
   /
 END
 
-TRANSPORT_CONDITION inlet
-  TYPE DIRICHLET_ZERO_GRADIENT
-  CONSTRAINT_LIST
-    0.d0 fertilizer
-  /
-END
+# TRANSPORT_CONDITION inlet
+#   TYPE DIRICHLET_ZERO_GRADIENT
+#   CONSTRAINT_LIST
+#     0.d0 fertilizer
+#   /
+# END
 
 
 #=========================== initial constraint ============================
@@ -263,15 +263,11 @@ BOUNDARY_CONDITION outlet
   REGION east
 END
 
-BOUNDARY_CONDITION inlet
-  TRANSPORT_CONDITION inlet
-  REGION west
-END
 
 #=========================== stratigraphy couplers ============================
 STRATA
   REGION all
-  MATERIAL soil1
+  MATERIAL peat
 END
 
 

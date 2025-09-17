@@ -57,6 +57,23 @@
     Molar Mass:    0.0000 [g/mol]
     Debye-Huckel a0:    0.0000 [Angstrom]
 
+  Fe++   (redox species)
+    Charge:   2.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    6.0000 [Angstrom]
+
+  Fe+++   (redox species)
+    Charge:   3.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    9.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  Fe+++                           
+        -0.5000  H2O                             
+         0.2500  O2(g)                           
+         1.0000  Fe++                            
+         1.0000  H+                              
+      logK:    -9.3541    -7.7654    -5.8970    -4.1507    -2.3795    -0.9223     0.3233     1.4215
+
   CH4(aq)   (redox species)
     Charge:   0.00
     Molar Mass:    0.0000 [g/mol]
@@ -120,6 +137,26 @@
          1.0000  DOM1                            
       logK:   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000
 
+  Fe(OH)3
+    Molar Mass:  106.8690 [g/mol]
+    Molar Volume:  3.4360E-05 [m^3/mol]
+    Mineral Reaction: 
+        -1.0000  Fe(OH)3                         
+        -3.0000  H+                              
+         1.0000  Fe+++                           
+         3.0000  H2O                             
+      logK:     6.9971     5.6556     4.1038     2.6878     1.2773     0.1146    -0.9130    -1.8839
+
+  Fe(OH)2
+    Molar Mass:   89.8617 [g/mol]
+    Molar Volume:  2.6430E-05 [m^3/mol]
+    Mineral Reaction: 
+        -1.0000  Fe(OH)2                         
+        -2.0000  H+                              
+         1.0000  Fe++                            
+         2.0000  H2O                             
+      logK:    15.4363    13.9045    12.1560    10.5781     9.0375     7.8144     6.7914     5.8837
+
 
  Surface Complexation Reactions: None
 
@@ -131,7 +168,9 @@
 
  WARNING: Inhibition species "O2(aq) not found in microbial reaction.
  WARNING: Inhibition species "O2(aq) not found in microbial reaction.
+ WARNING: Inhibition species "Fe+++ not found in microbial reaction.
  WARNING: Inhibition species "O2(aq) not found in microbial reaction.
+ WARNING: Inhibition species "Fe+++ not found in microbial reaction.
  WARNING: Inhibition species "H+ not found in microbial reaction.
  WARNING: Inhibition species "H+ not found in microbial reaction.
 
@@ -174,6 +213,16 @@
     Charge:   0.00
     Molar Mass:    0.0000 [g/mol]
     Debye-Huckel a0:    0.0000 [Angstrom]
+
+  Fe++   (redox species)
+    Charge:   2.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    6.0000 [Angstrom]
+
+  Fe+++   (redox species)
+    Charge:   3.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    9.0000 [Angstrom]
 
   CH4(aq)   (redox species)
     Charge:   0.00
@@ -231,6 +280,26 @@
          1.0000  DOM1                            
       logK:   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000
 
+  Fe(OH)3
+    Molar Mass:  106.8690 [g/mol]
+    Molar Volume:  3.4360E-05 [m^3/mol]
+    Mineral Reaction: 
+        -1.0000  Fe(OH)3                         
+         3.0000  H2O                             
+        -3.0000  H+                              
+         1.0000  Fe+++                           
+      logK:     6.9971     5.6556     4.1038     2.6878     1.2773     0.1146    -0.9130    -1.8839
+
+  Fe(OH)2
+    Molar Mass:   89.8617 [g/mol]
+    Molar Volume:  2.6430E-05 [m^3/mol]
+    Mineral Reaction: 
+        -1.0000  Fe(OH)2                         
+         2.0000  H2O                             
+        -2.0000  H+                              
+         1.0000  Fe++                            
+      logK:    15.4363    13.9045    12.1560    10.5781     9.0375     7.8144     6.7914     5.8837
+
 
  Surface Complexation Reactions: None
 
@@ -242,11 +311,12 @@
 
 --------------------------------------------------------------------------------
 
-     8  Primary Species
+    10  Primary Species
 
               DOM1                  O2(aq)                HCO3-               
               H+                    Acetate-              H2(aq)              
-              Tracer                CH4(aq)             
+              Tracer                Fe++                  Fe+++               
+              CH4(aq)             
 
      2  Secondary Complex Species
 
@@ -260,13 +330,15 @@
 
               CO2(g)                O2(g)               
 
-     1  Reference Minerals
+     3  Reference Minerals
 
-              SOM                 
+              SOM                   Fe(OH)3               Fe(OH)2             
 
-     1  Kinetic Mineral Reactions
 
-              SOM                 
+     3  Kinetic Mineral Reactions
+
+              SOM                   Fe(OH)3               Fe(OH)2             
+
 
      0  Ion Exchange Reactions
 
@@ -279,9 +351,15 @@ Constraint Species: H+
 Constraint Species: Acetate-
 Constraint Species: H2(aq)
 Constraint Species: Tracer
+Constraint Species: Fe++
+Constraint Species: Fe+++
 Constraint Species: CH4(aq)
 Constraint Minerals: SOM
 "SOM SPECIFIC SURFACE_AREA UNITS" set to default value.
+Constraint Minerals: Fe(OH)3
+"Fe(OH)3 SPECIFIC SURFACE_AREA UNITS" set to default value.
+Constraint Minerals: Fe(OH)2
+"Fe(OH)2 SPECIFIC SURFACE_AREA UNITS" set to default value.
 Constraint Species: DOM1
 Constraint Species: O2(aq)
 Constraint Species: HCO3-
@@ -289,4 +367,12 @@ Constraint Species: H+
 Constraint Species: Acetate-
 Constraint Species: H2(aq)
 Constraint Species: Tracer
+Constraint Species: Fe++
+Constraint Species: Fe+++
 Constraint Species: CH4(aq)
+Constraint Minerals: SOM
+"SOM SPECIFIC SURFACE_AREA UNITS" set to default value.
+Constraint Minerals: Fe(OH)3
+"Fe(OH)3 SPECIFIC SURFACE_AREA UNITS" set to default value.
+Constraint Minerals: Fe(OH)2
+"Fe(OH)2 SPECIFIC SURFACE_AREA UNITS" set to default value.

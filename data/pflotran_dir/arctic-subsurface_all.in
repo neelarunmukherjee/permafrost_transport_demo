@@ -39,8 +39,8 @@ PRIMARY_SPECIES
   Acetate-
   H2(aq)
   Tracer
-  # Fe++
-  # Fe+++
+  Fe++
+  Fe+++
   CH4(aq)
 /
 DECOUPLED_EQUILIBRIUM_REACTIONS
@@ -51,8 +51,8 @@ DECOUPLED_EQUILIBRIUM_REACTIONS
   Acetate-
   H2(aq)
   Tracer
-  # Fe++
-  # Fe+++
+  Fe++
+  Fe+++
   CH4(aq)
 /
 SECONDARY_SPECIES
@@ -69,8 +69,8 @@ PASSIVE_GAS_SPECIES
 /
 MINERALS
   SOM
-  # Fe(OH)3
-  # Fe(OH)2
+  Fe(OH)3
+  Fe(OH)2
 /
 MINERAL_KINETICS
   SOM
@@ -78,12 +78,12 @@ MINERAL_KINETICS
       RATE_CONSTANT -7.426
     /
   /
-  # Fe(OH)3
-  #   RATE_CONSTANT  1.d-6 mol/m^2-sec
-  # /
-  # Fe(OH)2
-  #   RATE_CONSTANT  1.d-7 mol/m^2-sec
-  # /
+  Fe(OH)3
+    RATE_CONSTANT  1.d-6 mol/m^2-sec
+  /
+  Fe(OH)2
+    RATE_CONSTANT  1.d-7 mol/m^2-sec
+  /
 /
 # SORPTION
 #   ION_EXCHANGE_RXN
@@ -165,27 +165,6 @@ MINERAL_KINETICS
       THRESHOLD_CONCENTRATION 0.00e+00
     /
   /
-  # # Fe(II) abiotic oxidation to Fe(III)
-  # GENERAL_REACTION
-  #   REACTION 1.00e+00 Fe++  + 2.50e-01 O2(aq)  + 1.00e+00 H+  <-> 1.00e+00 Fe+++  + 5.00e-01 H2O 
-  #   FORWARD_RATE        0.00e+00
-  #   BACKWARD_RATE       0.00e+00
-  # /
-  # # Fe(II) microbial oxidation to Fe(III)
-  # MICROBIAL_REACTION
-  #   REACTION 1.00e+00 Fe++  + 2.50e-01 O2(aq)  + 1.00e+00 H+  -> 1.00e+00 Fe+++  + 5.00e-01 H2O 
-  #   RATE_CONSTANT       1.50e-06
-  #   MONOD
-  #     SPECIES_NAME        O2(aq)
-  #     HALF_SATURATION_CONSTANT 1.00e-04
-  #     THRESHOLD_CONCENTRATION 0.00e+00
-  #   /
-  #   MONOD
-  #     SPECIES_NAME        Fe++
-  #     HALF_SATURATION_CONSTANT 1.00e-01
-  #     THRESHOLD_CONCENTRATION 1.10e-15
-  #   /
-  # /
   # Hydrogenotrophic methanogenesis to CH4 inhibited by O2, Fe(III), and H+
   MICROBIAL_REACTION
     REACTION 4.00e+00 H2(aq)  + 1.00e+00 HCO3-  + 1.00e+00 H+  -> 1.00e+00 CH4(aq)  + 3.00e+00 H2O 
@@ -205,37 +184,17 @@ MINERAL_KINETICS
       TYPE MONOD
       INHIBITION_CONSTANT 1.00e-05
     /
-    # INHIBITION
-    #   SPECIES_NAME        Fe+++
-    #   TYPE MONOD
-    #   INHIBITION_CONSTANT 1.00e+00
-    # /
+    INHIBITION
+      SPECIES_NAME        Fe+++
+      TYPE MONOD
+      INHIBITION_CONSTANT 1.00e+00
+    /
     INHIBITION
       SPECIES_NAME        H+
       TYPE MONOD
       INHIBITION_CONSTANT 1.78e-07
     /
   /
-  # # Fe(III) reduction inhibited by O2
-  # MICROBIAL_REACTION
-  #   REACTION 1.00e+00 Acetate-  + 8.00e+00 Fe+++  + 4.00e+00 H2O  -> 2.00e+00 HCO3-  + 8.00e+00 Fe++  + 9.00e+00 H+  + 2.00e+00 Tracer 
-  #   RATE_CONSTANT       2.25e-08
-  #   MONOD
-  #     SPECIES_NAME        Acetate-
-  #     HALF_SATURATION_CONSTANT 4.00e-02
-  #     THRESHOLD_CONCENTRATION 1.10e-15
-  #   /
-  #   MONOD
-  #     SPECIES_NAME        Fe+++
-  #     HALF_SATURATION_CONSTANT 1.00e-10
-  #     THRESHOLD_CONCENTRATION 1.10e-15
-  #   /
-  #   INHIBITION
-  #     SPECIES_NAME        O2(aq)
-  #     TYPE MONOD
-  #     INHIBITION_CONSTANT 1.00e-05
-  #   /
-  # /
   # Acetaclastic methanogenesis to CH4 inhibited by O2, Fe(III), and H+
   MICROBIAL_REACTION
     REACTION 1.00e+00 Acetate-  + 1.00e+00 H2O  -> 1.00e+00 CH4(aq)  + 1.00e+00 HCO3-  + 1.00e+00 Tracer 
@@ -250,11 +209,11 @@ MINERAL_KINETICS
       TYPE MONOD
       INHIBITION_CONSTANT 1.00e-05
     /
-    # INHIBITION
-    #   SPECIES_NAME        Fe+++
-    #   TYPE MONOD
-    #   INHIBITION_CONSTANT 1.00e+00
-    # /
+    INHIBITION
+      SPECIES_NAME        Fe+++
+      TYPE MONOD
+      INHIBITION_CONSTANT 1.00e+00
+    /
     INHIBITION
       SPECIES_NAME        H+
       TYPE MONOD
@@ -268,7 +227,6 @@ MINERAL_KINETICS
   /
 
 
-
   LOG_FORMULATION
   ACTIVITY_COEFFICIENTS TIMESTEP
   DATABASE ./db/hanford.dat
@@ -280,6 +238,47 @@ MINERAL_KINETICS
 END
 
 #=========================== solver options ===================================
+#=========================== initial constraint ============================
+CONSTRAINT oc_rich
+  CONCENTRATIONS
+    DOM1               1.0e-10 T
+    O2(aq)             1.0e-10 T 
+    HCO3-              400e-6 G CO2(g)
+    H+                 6.0 P
+    Acetate-           1.0e-10 T
+    H2(aq)             1.0e-10 T
+    Tracer             1.0e-10 T
+    Fe++              0.37e-3 T
+    Fe+++             .37e-10 M Fe(OH)3
+    CH4(aq)           1.0e-10 T
+  /
+  MINERALS
+    SOM 1.d-2 1.0d0
+    Fe(OH)3 0.875d-3 1.d2
+    Fe(OH)2 0.0e-20 1.d2
+  /
+END
+
+#===========================  another initial constraint ====================
+CONSTRAINT oc_poor 
+  CONCENTRATIONS
+    DOM1                1.0e-10 T
+    O2(aq)              1.0e-10 T
+    HCO3-               400e-6 G CO2(g)
+    H+                  6.0 P
+    Acetate-            1.0e-10 T
+    H2(aq)              1.0e-10 T
+    Tracer              1.0e-10 T
+    Fe++               0.37e-3 T
+    Fe+++              .37e-10 M Fe(OH)3
+    CH4(aq)            1.0e-10 T
+  /
+  MINERALS
+    SOM 1.d-2 1.0d0
+    Fe(OH)3 0.875d-3 1.d2 
+    Fe(OH)2 0.0e-20 1.d2
+  /
+END
 
 #=========================== discretization ===================================
 GRID
@@ -349,54 +348,6 @@ TRANSPORT_CONDITION initial
   /
 END
 
-# TRANSPORT_CONDITION inlet
-#   TYPE DIRICHLET_ZERO_GRADIENT
-#   CONSTRAINT_LIST
-#     0.d0 fertilizer
-#   /
-# END
-
-
-#=========================== initial constraint ============================
-CONSTRAINT oc_rich
-  CONCENTRATIONS
-    DOM1               1.0e-10 T
-    O2(aq)             1.0e-10 T 
-    HCO3-              400e-6 G CO2(g)
-    H+                 6.0 P
-    Acetate-           1.0e-10 T
-    H2(aq)             1.0e-10 T
-    Tracer             1.0e-10 T
-    # Fe++              0.37e-3 T
-    # Fe+++             .37e-10 M Fe(OH)3
-    CH4(aq)           1.0e-10 T
-  /
-  MINERALS
-    SOM 1.d-2 1.0d0
-    # Fe(OH)3 0.875d-3 1.d2
-    # Fe(OH)2 0.0e-20 1.d2
-  /
-END
-
-#===========================  another initial constraint ====================
-CONSTRAINT oc_poor 
-  CONCENTRATIONS
-    DOM1                1.0e-10 T
-    O2(aq)              1.0e-10 T
-    HCO3-               400e-6 G CO2(g)
-    H+                  6.0 P
-    Acetate-            1.0e-10 T
-    H2(aq)              1.0e-10 T
-    Tracer              1.0e-10 T
-    # Fe++               0.37e-3 T
-    # Fe+++              .37e-10 M Fe(OH)3
-    CH4(aq)            1.0e-10 T
-  /
-  # MINERALS
-  #   Fe(OH)3 0.875d-3 1.d2 
-  #   Fe(OH)2 0.0e-20 1.d2
-END
-
 #=========================== condition couplers ===============================
 # initial condition
 INITIAL_CONDITION
@@ -409,15 +360,15 @@ BOUNDARY_CONDITION outlet
   REGION east
 END
 
-BOUNDARY_CONDITION inlet
-  TRANSPORT_CONDITION inlet
-  REGION west
-END
+# BOUNDARY_CONDITION inlet
+#   TRANSPORT_CONDITION inlet
+#   REGION west
+# END
 
 #=========================== stratigraphy couplers ============================
 STRATA
   REGION all
-  MATERIAL soil1
+  MATERIAL peat
 END
 
 

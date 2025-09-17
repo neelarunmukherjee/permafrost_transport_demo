@@ -40,6 +40,8 @@ PRIMARY_SPECIES
   H2(aq)
   Tracer
   CH4(aq)
+  Fe++
+  Fe+++
 /
 DECOUPLED_EQUILIBRIUM_REACTIONS
   DOM1
@@ -50,6 +52,8 @@ DECOUPLED_EQUILIBRIUM_REACTIONS
   H2(aq)
   Tracer
   CH4(aq)
+  Fe++
+  Fe+++
 /
 SECONDARY_SPECIES
   OH-
@@ -151,6 +155,8 @@ CONSTRAINT rainfall
     H2(aq)             1.0e-10 T
     Tracer             1.0e-10 T
     CH4(aq)           1.0e-10 T
+    Fe++              1.0e-10 T
+    Fe+++            0.0e-10 T
   /
 END
 
