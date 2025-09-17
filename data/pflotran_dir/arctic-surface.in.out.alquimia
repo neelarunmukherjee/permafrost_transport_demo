@@ -25,6 +25,31 @@
     Molar Mass:    1.0079 [g/mol]
     Debye-Huckel a0:    9.0000 [Angstrom]
 
+  Acetate-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   59.0446 [g/mol]
+    Debye-Huckel a0:    4.5000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  Acetate-                        
+        -1.0000  H+                              
+         1.0000  Acetic_acid(aq)                 
+      logK:     4.7812     4.7572     4.8080     4.9438     5.1953     5.5241     5.9420     6.5094
+
+  H2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:    2.0159 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  H2(aq)                          
+        -0.5000  O2(g)                           
+         1.0000  H2O                             
+      logK:    49.1500    44.6575    39.4400    34.6224    29.8242    25.9892    22.8409    20.1881
+
+  Tracer   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    0.0000 [Angstrom]
+
 
  Secondary Species:
   OH-
@@ -103,6 +128,21 @@
     Molar Mass:    1.0079 [g/mol]
     Debye-Huckel a0:    9.0000 [Angstrom]
 
+  Acetate-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   59.0446 [g/mol]
+    Debye-Huckel a0:    4.5000 [Angstrom]
+
+  H2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:    2.0159 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  Tracer   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    0.0000 [Angstrom]
+
 
  Secondary Species:
   OH-
@@ -157,10 +197,11 @@
 
 --------------------------------------------------------------------------------
 
-     4  Primary Species
+     7  Primary Species
 
               DOM1                  O2(aq)                HCO3-               
-              H+                  
+              H+                    Acetate-              H2(aq)              
+              Tracer              
 
      2  Secondary Complex Species
 
@@ -190,6 +231,9 @@ Constraint Species: DOM1
 Constraint Species: O2(aq)
 Constraint Species: H+
 Constraint Species: HCO3-
+Constraint Species: Acetate-
+Constraint Species: H2(aq)
+Constraint Species: Tracer
 processing : oc_rich
 Looking for pflotran constraint : oc_rich
 initializing constraint : oc_rich
@@ -202,7 +246,7 @@ equilibrate constraint : oc_rich
                 pe:  13.1063
                 Eh:   0.7754
     ionic strength:   3.5851E-06 [mol/L]
-    charge balance:  -5.1573E-06
+    charge balance:  -5.1574E-06
           pressure:   0.0000E+00 [Pa]
        temperature:    25.00 [C]
        density H2O:   997.16 [kg/m^3]
@@ -218,6 +262,9 @@ equilibrate constraint : oc_rich
   O2(aq)                    1.0016E-10  1.0028E-10  1.0000E+00    total aq
   HCO3-                     6.1578E-06  1.9770E-05  9.9778E-01    CO2(g)
   H+                        1.0022E-06  1.4598E-05  9.9779E-01    pH
+  Acetate-                  1.0016E-10  1.0028E-10  9.9778E-01    total aq
+  H2(aq)                    1.0016E-10  1.0028E-10  1.0000E+00    total aq
+  Tracer                    1.0016E-10  1.0028E-10  1.0000E+00    total aq
 
   complex                   molality    act coef        logK
   ----------------------------------------------------------------------------
@@ -240,12 +287,12 @@ equilibrate constraint : oc_poor
 
   Constraint: oc_poor
   ----------------------------------------------------------------------------
-        iterations:     9
+        iterations:    10
                 pH:   6.0000
                 pe:  13.1063
                 Eh:   0.7754
     ionic strength:   3.5851E-06 [mol/L]
-    charge balance:  -5.1569E-06
+    charge balance:  -5.1570E-06
           pressure:   0.0000E+00 [Pa]
        temperature:    25.00 [C]
        density H2O:   997.16 [kg/m^3]
@@ -261,6 +308,9 @@ equilibrate constraint : oc_poor
   O2(aq)                    1.0017E-10  1.0028E-10  1.0000E+00    total aq
   HCO3-                     6.1578E-06  1.9768E-05  9.9778E-01    CO2(g)
   H+                        1.0022E-06  1.4597E-05  9.9779E-01    pH
+  Acetate-                  1.0017E-10  1.0028E-10  9.9778E-01    total aq
+  H2(aq)                    1.0017E-10  1.0028E-10  1.0000E+00    total aq
+  Tracer                    1.0017E-10  1.0028E-10  1.0000E+00    total aq
 
   complex                   molality    act coef        logK
   ----------------------------------------------------------------------------
@@ -288,8 +338,8 @@ equilibrate constraint : rainfall
                 pe:  14.7121
                 Eh:   0.8704
     ionic strength:   3.5851E-06 [mol/L]
-    charge balance:  -5.1569E-06
-          pressure:   0.0000E+00 [Pa]
+    charge balance:  -5.1570E-06
+          pressure:   3.5203E+16 [Pa]
        temperature:    25.00 [C]
        density H2O:   997.16 [kg/m^3]
  ln / activity H2O:   0.0000E+00  1.0000E+00    [---]
@@ -301,16 +351,3 @@ equilibrate constraint : rainfall
   species                   molal       molal       act coef     constraint
   ----------------------------------------------------------------------------
   DOM1                      1.0017E-10  1.0028E-10  1.0000E+00    total aq
-  O2(aq)                    2.6541E-04  2.6571E-04  1.0000E+00    O2(g)
-  HCO3-                     6.1578E-06  1.9768E-05  9.9778E-01    CO2(g)
-  H+                        1.0022E-06  1.4597E-05  9.9779E-01    pH
-
-  complex                   molality    act coef        logK
-  ----------------------------------------------------------------------------
-  CO2(aq)                   1.3588E-05  1.0000E+00   -6.3447E+00
-  OH-                       1.0136E-08  9.9778E-01    1.3995E+01
-
-  gas              par pres [bars]  conc [mol/m^3]  log K
-  ----------------------------------------------------------------------------
-  CO2(g)           4.0000E-04       1.6136E-02      -7.8136E+00
-  O2(g)            2.1000E-01       8.4713E+00      -2.8983E+00

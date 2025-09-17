@@ -204,7 +204,7 @@ equilibrate constraint : initial
         iterations:     9
     ionic strength:   0.0000E+00 [mol/L]
     charge balance:   0.0000E+00
-          pressure:   0.0000E+00 [Pa]
+          pressure:  -1.8679E-01 [Pa]
        temperature:    25.00 [C]
        density H2O:   997.16 [kg/m^3]
  ln / activity H2O:   0.0000E+00  1.0000E+00    [---]
@@ -215,8 +215,8 @@ equilibrate constraint : initial
   primary                   free        total
   species                   molal       molal       act coef     constraint
   ----------------------------------------------------------------------------
-  Tracer1                   1.0017E-20  1.0028E-20  1.0000E+00    total aq
-  Tracer2                   1.0017E-20  1.0028E-20  1.0000E+00    total aq
+  Tracer1                   1.0003E-20  1.0028E-20  1.0000E+00    total aq
+  Tracer2                   1.0003E-20  1.0028E-20  1.0000E+00    total aq
 
   primary species         total(aq+sorbed)    total retardation
                              [mol/L]               1+Kd
@@ -233,7 +233,7 @@ equilibrate constraint : initial
         iterations:     9
     ionic strength:   0.0000E+00 [mol/L]
     charge balance:   0.0000E+00
-          pressure:   7.2737+175 [Pa]
+          pressure:   0.0000E+00 [Pa]
        temperature:    25.00 [C]
        density H2O:   997.16 [kg/m^3]
  ln / activity H2O:   0.0000E+00  1.0000E+00    [---]
@@ -244,8 +244,8 @@ equilibrate constraint : initial
   primary                   free        total
   species                   molal       molal       act coef     constraint
   ----------------------------------------------------------------------------
-  Tracer1                   1.0017E-20  1.0028E-20  1.0000E+00    total aq
-  Tracer2                   1.0017E-20  1.0028E-20  1.0000E+00    total aq
+  Tracer1                   1.0003E-20  1.0028E-20  1.0000E+00    total aq
+  Tracer2                   1.0003E-20  1.0028E-20  1.0000E+00    total aq
 
   primary species         total(aq+sorbed)    total retardation
                              [mol/L]               1+Kd
@@ -266,15 +266,15 @@ equilibrate constraint : rainfall
        temperature:    25.00 [C]
        density H2O:   997.16 [kg/m^3]
  ln / activity H2O:   0.0000E+00  1.0000E+00    [---]
- mole fraction H2O:   9.8227E-01    [---]
+ mole fraction H2O:   9.8230E-01    [---]
  mass fraction H2O:   1.0000E+00    [---]
   ----------------------------------------------------------------------------
 
   primary                   free        total
   species                   molal       molal       act coef     constraint
   ----------------------------------------------------------------------------
-  Tracer1                   1.0017E+00  1.0028E+00  1.0000E+00    total aq
-  Tracer2                   1.0017E-20  1.0028E-20  1.0000E+00    total aq
+  Tracer1                   1.0003E+00  1.0028E+00  1.0000E+00    total aq
+  Tracer2                   1.0003E-20  1.0028E-20  1.0000E+00    total aq
 
   primary species         total(aq+sorbed)    total retardation
                              [mol/L]               1+Kd

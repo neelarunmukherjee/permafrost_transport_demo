@@ -1,4 +1,4 @@
-#Description: 1D microbial degradation problem 
+#Description: 1D microbial degradation problem without biomass
 
 SIMULATION
   SIMULATION_TYPE SUBSURFACE
@@ -36,12 +36,18 @@ PRIMARY_SPECIES
   O2(aq)
   HCO3-
   H+ 
+  Acetate-
+  H2(aq)
+  Tracer
 /
 DECOUPLED_EQUILIBRIUM_REACTIONS
   DOM1
   O2(aq)
   HCO3-
   H+ 
+  Acetate-
+  H2(aq)
+  Tracer
 /
 SECONDARY_SPECIES
   OH-
@@ -51,32 +57,6 @@ PASSIVE_GAS_SPECIES
   CO2(g) 
   O2(g) 
 /
-MINERALS
-    SOM
-/
-MINERAL_KINETICS
-    SOM
-      PREFACTOR
-        RATE_CONSTANT -7.426
-      /
-    /
-/
-  # DOM aerobic respiration
-  MICROBIAL_REACTION
-    REACTION 1.0e+00 DOM1  + 1.0e+00 O2(aq)  -> 1.0e+00 HCO3- + 1.0 H+ 
-    RATE_CONSTANT       1.8e-07
-    MONOD
-      SPECIES_NAME        O2(aq)
-      HALF_SATURATION_CONSTANT 1.0e-04
-      THRESHOLD_CONCENTRATION 1.1e-20
-    /
-    MONOD
-      SPECIES_NAME        DOM1
-      HALF_SATURATION_CONSTANT 1.0e-01
-      THRESHOLD_CONCENTRATION 1.1e-20
-    /
-  /
-
 
   LOG_FORMULATION
   ACTIVITY_COEFFICIENTS TIMESTEP
@@ -106,7 +86,7 @@ FLUID_PROPERTY
 END
 
 #=========================== material properties ==============================
-MATERIAL_PROPERTY peat
+MATERIAL_PROPERTY soil1
   ID 1
   POROSITY 0.25d0
   TORTUOSITY 1.d0
@@ -154,38 +134,20 @@ END
 TRANSPORT_CONDITION initial
   TYPE ZERO_GRADIENT
   CONSTRAINT_LIST
-    0.d0 oc_rich
+    0.d0 rainfall
   /
 END
 
-TRANSPORT_CONDITION inlet
-  TYPE DIRICHLET_ZERO_GRADIENT
-  CONSTRAINT_LIST
-    0.d0 fertilizer
-  /
-END
-
-
-#=========================== initial constraint ============================
-CONSTRAINT oc_rich
+#=========================== rainfall/initial constraint ====================
+CONSTRAINT rainfall
   CONCENTRATIONS
     DOM1                1.0e-10 T
-    O2(aq)              1.0e-10 T 
+    O2(aq)              0.21 G O2(g) 
     H+                  6.0 P
     HCO3-               400e-6 G CO2(g)
-  /
-  MINERALS
-    SOM 1.d-2 1.0d0
-  /
-END
-
-#===========================  another initial constraint ====================
-CONSTRAINT oc_poor 
-  CONCENTRATIONS
-    DOM1                1.0e-10 T
-    O2(aq)              1.0e-10 T 
-    H+                  6.0 P
-    HCO3-               400e-6 G CO2(g)
+    Acetate-           1.0e-10 T
+    H2(aq)             1.0e-10 T
+    Tracer             1.0e-10 T
   /
 END
 
