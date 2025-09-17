@@ -147,16 +147,6 @@
          3.0000  H2O                             
       logK:     6.9971     5.6556     4.1038     2.6878     1.2773     0.1146    -0.9130    -1.8839
 
-  Fe(OH)2
-    Molar Mass:   89.8617 [g/mol]
-    Molar Volume:  2.6430E-05 [m^3/mol]
-    Mineral Reaction: 
-        -1.0000  Fe(OH)2                         
-        -2.0000  H+                              
-         1.0000  Fe++                            
-         2.0000  H2O                             
-      logK:    15.4363    13.9045    12.1560    10.5781     9.0375     7.8144     6.7914     5.8837
-
 
  Surface Complexation Reactions: None
 
@@ -290,16 +280,6 @@
          1.0000  Fe+++                           
       logK:     6.9971     5.6556     4.1038     2.6878     1.2773     0.1146    -0.9130    -1.8839
 
-  Fe(OH)2
-    Molar Mass:   89.8617 [g/mol]
-    Molar Volume:  2.6430E-05 [m^3/mol]
-    Mineral Reaction: 
-        -1.0000  Fe(OH)2                         
-         2.0000  H2O                             
-        -2.0000  H+                              
-         1.0000  Fe++                            
-      logK:    15.4363    13.9045    12.1560    10.5781     9.0375     7.8144     6.7914     5.8837
-
 
  Surface Complexation Reactions: None
 
@@ -330,15 +310,13 @@
 
               CO2(g)                O2(g)               
 
-     3  Reference Minerals
+     2  Reference Minerals
 
-              SOM                   Fe(OH)3               Fe(OH)2             
+              SOM                   Fe(OH)3             
 
+     2  Kinetic Mineral Reactions
 
-     3  Kinetic Mineral Reactions
-
-              SOM                   Fe(OH)3               Fe(OH)2             
-
+              SOM                   Fe(OH)3             
 
      0  Ion Exchange Reactions
 
@@ -358,8 +336,6 @@ Constraint Minerals: SOM
 "SOM SPECIFIC SURFACE_AREA UNITS" set to default value.
 Constraint Minerals: Fe(OH)3
 "Fe(OH)3 SPECIFIC SURFACE_AREA UNITS" set to default value.
-Constraint Minerals: Fe(OH)2
-"Fe(OH)2 SPECIFIC SURFACE_AREA UNITS" set to default value.
 Constraint Species: DOM1
 Constraint Species: O2(aq)
 Constraint Species: HCO3-
@@ -374,5 +350,3 @@ Constraint Minerals: SOM
 "SOM SPECIFIC SURFACE_AREA UNITS" set to default value.
 Constraint Minerals: Fe(OH)3
 "Fe(OH)3 SPECIFIC SURFACE_AREA UNITS" set to default value.
-Constraint Minerals: Fe(OH)2
-"Fe(OH)2 SPECIFIC SURFACE_AREA UNITS" set to default value.

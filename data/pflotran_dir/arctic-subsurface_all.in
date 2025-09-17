@@ -2,14 +2,19 @@
 
 SIMULATION
   SIMULATION_TYPE SUBSURFACE
-  PROCESS_MODELS
+    PROCESS_MODELS
     SUBSURFACE_TRANSPORT transport
       MODE GIRT
+      OPTIONS
+      /
+    END
     /
-  /
 END
 
 SUBSURFACE
+
+REFERENCE_LIQUID_DENSITY 1.d3
+
 
 #=========================== numerical methods ================================
 NUMERICAL_METHODS TRANSPORT
@@ -24,10 +29,10 @@ END
 # Uniform velocity (see below). No flow mode specified.
 
 #=========================== useful tranport parameters ==================
-SPECIFIED_VELOCITY
-  UNIFORM? YES
-  DATASET 1.d0 0.d0 0.d0 m/yr
-END
+# SPECIFIED_VELOCITY
+#   UNIFORM? YES
+#   DATASET 1.d0 0.d0 0.d0 m/yr
+# END
 
 #=========================== chemistry ========================================
 CHEMISTRY
@@ -58,19 +63,14 @@ DECOUPLED_EQUILIBRIUM_REACTIONS
 SECONDARY_SPECIES
   OH-
   CO2(aq)
-  # FeCO3+
-  # Fe(OH)4-
-  # Acetic_acid(aq)
-  # Fe(OH)2(aq)
 /
 PASSIVE_GAS_SPECIES 
   CO2(g) 
-  O2(g) 
+  O2(g)
 /
 MINERALS
   SOM
   Fe(OH)3
-  Fe(OH)2
 /
 MINERAL_KINETICS
   SOM
@@ -79,10 +79,7 @@ MINERAL_KINETICS
     /
   /
   Fe(OH)3
-    RATE_CONSTANT  1.d-6 mol/m^2-sec
-  /
-  Fe(OH)2
-    RATE_CONSTANT  1.d-7 mol/m^2-sec
+    RATE_CONSTANT  1e-06 mol/m^2-sec
   /
 /
 # SORPTION
@@ -255,7 +252,6 @@ CONSTRAINT oc_rich
   MINERALS
     SOM 1.d-2 1.0d0
     Fe(OH)3 0.875d-3 1.d2
-    Fe(OH)2 0.0e-20 1.d2
   /
 END
 
@@ -276,7 +272,6 @@ CONSTRAINT oc_poor
   MINERALS
     SOM 1.d-2 1.0d0
     Fe(OH)3 0.875d-3 1.d2 
-    Fe(OH)2 0.0e-20 1.d2
   /
 END
 

@@ -275,3 +275,90 @@
 Constraint Species: DOM1
 Constraint Species: O2(aq)
 Constraint Species: H+
+Constraint Species: HCO3-
+Constraint Species: Acetate-
+Constraint Species: H2(aq)
+Constraint Species: Tracer
+Constraint Species: CH4(aq)
+Constraint Species: Fe++
+Constraint Species: Fe+++
+processing : oc_poor
+Looking for pflotran constraint : oc_poor
+initializing constraint : oc_poor
+equilibrate constraint : oc_poor
+
+  Constraint: oc_poor
+  ----------------------------------------------------------------------------
+        iterations:    14
+                pH:   6.0000
+                pe:  13.1063
+                Eh:   0.7754
+    ionic strength:   7.4489E-04 [mol/L]
+    charge balance:   7.3469E-04
+          pressure:   0.0000E+00 [Pa]
+       temperature:    25.00 [C]
+       density H2O:   997.16 [kg/m^3]
+ ln / activity H2O:   0.0000E+00  1.0000E+00    [---]
+ mole fraction H2O:   9.9999E-01    [---]
+ mass fraction H2O:   9.9998E-01    [---]
+  ----------------------------------------------------------------------------
+
+  primary                   free        total
+  species                   molal       molal       act coef     constraint
+  ----------------------------------------------------------------------------
+  DOM1                      1.0016E-10  1.0028E-10  1.0000E+00    total aq
+  O2(aq)                    1.0016E-10  1.0028E-10  1.0000E+00    total aq
+  HCO3-                     6.3373E-06  1.9950E-05  9.6952E-01    CO2(g)
+  H+                        1.0301E-06  1.4626E-05  9.7077E-01    pH
+  Acetate-                  1.0016E-10  1.0028E-10  9.6965E-01    total aq
+  H2(aq)                    1.0016E-10  1.0028E-10  1.0000E+00    total aq
+  Tracer                    1.0016E-10  1.0028E-10  1.0000E+00    total aq
+  Fe++                      3.7060E-04  3.7105E-04  8.8522E-01    total aq
+  Fe+++                     5.9129E-13  5.9201E-13  7.6524E-01    Fe(OH)3
+  CH4(aq)                   1.0016E-10  1.0028E-10  1.0000E+00    total aq
+
+  complex                   molality    act coef        logK
+  ----------------------------------------------------------------------------
+  CO2(aq)                   1.3588E-05  1.0000E+00   -6.3447E+00
+  OH-                       1.0433E-08  9.6939E-01    1.3995E+01
+
+  mineral                             log SI       Affinity     log K
+                                                   [kJ/mol]
+  ----------------------------------------------------------------------------
+  Fe(OH)3                               0.0000     -0.0000    5.6556E+00
+  SOM                                -109.9993 627876.8186    1.0000E+02
+
+  gas              par pres [bars]  conc [mol/m^3]  log K
+  ----------------------------------------------------------------------------
+  CO2(g)           4.0000E-04       1.6136E-02      -7.8136E+00
+  O2(g)            7.9251E-08       3.1970E-06      -2.8983E+00
+processing : oc_rich
+Looking for pflotran constraint : oc_rich
+initializing constraint : oc_rich
+equilibrate constraint : oc_rich
+
+  Constraint: oc_rich
+  ----------------------------------------------------------------------------
+        iterations:    12
+                pH:   6.0000
+                pe:  13.1063
+                Eh:   0.7754
+    ionic strength:   7.4496E-04 [mol/L]
+    charge balance:   7.3469E-04
+          pressure:   0.0000E+00 [Pa]
+       temperature:    25.00 [C]
+       density H2O:   997.16 [kg/m^3]
+ ln / activity H2O:   0.0000E+00  1.0000E+00    [---]
+ mole fraction H2O:   9.9999E-01    [---]
+ mass fraction H2O:   9.9998E-01    [---]
+  ----------------------------------------------------------------------------
+
+  primary                   free        total
+  species                   molal       molal       act coef     constraint
+  ----------------------------------------------------------------------------
+  DOM1                      1.0017E-10  1.0028E-10  1.0000E+00    total aq
+  O2(aq)                    1.0017E-10  1.0028E-10  1.0000E+00    total aq
+  HCO3-                     6.3373E-06  1.9948E-05  9.6952E-01    CO2(g)
+  H+                        1.0301E-06  1.4624E-05  9.7077E-01    pH
+  Acetate-                  1.0017E-10  1.0028E-10  9.6965E-01    total aq
+  H2(aq)                    1.0017E-10  1.0028E-10  1.0000E+00    total aq

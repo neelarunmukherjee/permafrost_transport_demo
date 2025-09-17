@@ -1,0 +1,180 @@
+
+=================
+  PFLOTRAN v5.0
+=================
+
+"grid_structured_type" set to default value.
+pflotran card:: REFERENCE_LIQUID_DENSITY
+"Reference Density units" set to default value.
+pflotran card:: NUMERICAL_METHODS
+pflotran card:: SPECIFIED_VELOCITY
+pflotran card:: CHEMISTRY
+pflotran card:: GRID
+pflotran card:: FLUID_PROPERTY
+"FLUID_PROPERTY,diffusion_coefficient units" set to default value.
+pflotran card:: MATERIAL_PROPERTY
+  Name :: soil1
+pflotran card:: OUTPUT
+"OUTPUT,FORMAT,HDF5,# FILES" set to default value.
+pflotran card:: TIME
+pflotran card:: REGION
+all
+pflotran card:: REGION
+west
+pflotran card:: REGION
+east
+pflotran card:: TRANSPORT_CONDITION
+initial
+pflotran card:: CONSTRAINT
+rainfall
+Constraint Species: CO2(aq)
+Constraint Species: Tracer
+Constraint Species: Tracer2
+Constraint Species: O2(aq)
+Constraint Species: DOM1
+Constraint Species: Acetate-
+Constraint Species: H2(aq)
+Constraint Species: H+
+Constraint Species: Fe+++
+Constraint Species: Fe++
+Constraint Species: CH4(aq)
+pflotran card:: INITIAL_CONDITION
+"Initial Condition name" set to default value.
+pflotran card:: BOUNDARY_CONDITION
+pflotran card:: BOUNDARY_CONDITION
+pflotran card:: STRATA
+pflotran card:: END_SUBSURFACE
+
+ ! ************************************************************************** !
+
+ Initial Basis
+
+ Primary Species:
+  CO2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:   44.0098 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  CO2(aq)                         
+        -1.0000  H2O                             
+         1.0000  H+                              
+         1.0000  HCO3-                           
+      logK:    -6.5804    -6.3447    -6.2684    -6.3882    -6.7235    -7.1969    -7.7868    -8.5280
+
+  Tracer   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    0.0000 [Angstrom]
+
+  Tracer2   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    0.0000 [Angstrom]
+
+  O2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:   31.9988 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  DOM1   (redox species)
+    Charge:   0.00
+    Molar Mass:  180.1566 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  Acetate-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   59.0446 [g/mol]
+    Debye-Huckel a0:    4.5000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  Acetate-                        
+        -1.0000  H+                              
+         1.0000  Acetic_acid(aq)                 
+      logK:     4.7812     4.7572     4.8080     4.9438     5.1953     5.5241     5.9420     6.5094
+
+  H2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:    2.0159 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  H2(aq)                          
+        -0.5000  O2(g)                           
+         1.0000  H2O                             
+      logK:    49.1500    44.6575    39.4400    34.6224    29.8242    25.9892    22.8409    20.1881
+
+  H+   (redox species)
+    Charge:   1.00
+    Molar Mass:    1.0079 [g/mol]
+    Debye-Huckel a0:    9.0000 [Angstrom]
+
+  Fe+++   (redox species)
+    Charge:   3.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    9.0000 [Angstrom]
+
+  Fe++   (redox species)
+    Charge:   2.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    6.0000 [Angstrom]
+
+  CH4(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  CH4(aq)                         
+         1.0000  HCO3-                           
+         1.0000  H2O                             
+         1.0000  H+                              
+        -2.0000  O2(g)                           
+      logK:   152.5068   138.3445   121.9181   106.7680    91.6845    79.6132    69.6577    61.1712
+
+
+ Secondary Species:
+  HCO3-
+    Charge:  -1.00
+    Molar Mass:   61.0171 [g/mol]
+    Debye-Huckel a0:    4.0000 [Angstrom]
+
+  OH-
+    Charge:  -1.00
+    Molar Mass:   17.0073 [g/mol]
+    Debye-Huckel a0:    3.5000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  OH-                             
+        -1.0000  H+                              
+         1.0000  H2O                             
+      logK:    14.9398    13.9951    13.0272    12.2551    11.6308    11.2836    11.1675    11.3002
+
+
+ Gas Components:
+  CO2(g)*
+    Molar Mass:   44.0098 [g/mol]
+    Gas Reaction: 
+        -1.0000  CO2(g)*                         
+         1.0000  CO2(aq)                         
+      logK:    -1.0970    -1.4680    -1.7850    -1.9700    -2.0450    -2.0190    -1.9340    -1.8110
+
+  O2(g)
+    Molar Mass:   31.9988 [g/mol]
+    Gas Reaction: 
+        -1.0000  O2(g)                           
+         1.0000  O2(aq)                          
+      logK:    -2.6567    -2.8983    -3.0633    -3.1076    -3.0354    -2.8742    -2.6488    -2.3537
+
+
+ Minerals: None
+
+ Surface Complexation Reactions: None
+
+   Surface Complexes: None
+
+ Ion Exchange Reactions: None
+
+ ! ************************************************************************** !
+
+
+Species read from the reaction database with reactions associated with them in the database: OH- CO2(g)* O2(g)
+
+ERROR: The number of species read from the reaction database with associated reactions in the database (3) does not match the number of secondary aqueous species and gases in the problem (4). Since the number of species with associated reactions is lower, it is likely that there is a missing secondary aqueous species or gas. One or more of the species above is the problem.
+
+Stopping!

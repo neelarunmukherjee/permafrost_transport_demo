@@ -155,8 +155,8 @@ CONSTRAINT rainfall
     H2(aq)             1.0e-10 T
     Tracer             1.0e-10 T
     CH4(aq)           1.0e-10 T
-    Fe++              1.0e-10 T
-    Fe+++            0.0e-10 T
+    Fe++              1.0e-15 T
+    Fe+++            1.0e-15 T
   /
 END
 
@@ -172,10 +172,6 @@ BOUNDARY_CONDITION outlet
   REGION east
 END
 
-BOUNDARY_CONDITION inlet
-  TRANSPORT_CONDITION inlet
-  REGION west
-END
 
 #=========================== stratigraphy couplers ============================
 STRATA

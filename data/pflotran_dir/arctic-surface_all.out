@@ -1,0 +1,746 @@
+
+=================
+  PFLOTRAN v5.0
+=================
+
+"grid_structured_type" set to default value.
+pflotran card:: NUMERICAL_METHODS
+pflotran card:: SPECIFIED_VELOCITY
+pflotran card:: CHEMISTRY
+pflotran card:: GRID
+pflotran card:: FLUID_PROPERTY
+"FLUID_PROPERTY,diffusion_coefficient units" set to default value.
+pflotran card:: MATERIAL_PROPERTY
+  Name :: soil1
+pflotran card:: OUTPUT
+"OUTPUT,FORMAT,HDF5,# FILES" set to default value.
+pflotran card:: TIME
+pflotran card:: REGION
+all
+pflotran card:: REGION
+west
+pflotran card:: REGION
+east
+pflotran card:: TRANSPORT_CONDITION
+initial
+pflotran card:: CONSTRAINT
+rainfall
+Constraint Species: DOM1
+Constraint Species: O2(aq)
+Constraint Species: H+
+Constraint Species: HCO3-
+Constraint Species: Acetate-
+Constraint Species: H2(aq)
+Constraint Species: Tracer
+Constraint Species: CH4(aq)
+Constraint Species: Fe++
+Constraint Species: Fe+++
+pflotran card:: INITIAL_CONDITION
+"Initial Condition name" set to default value.
+pflotran card:: BOUNDARY_CONDITION
+pflotran card:: STRATA
+pflotran card:: END_SUBSURFACE
+
+ ! ************************************************************************** !
+
+ Initial Basis
+
+ Primary Species:
+  DOM1   (redox species)
+    Charge:   0.00
+    Molar Mass:  180.1566 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  O2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:   31.9988 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  HCO3-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   61.0171 [g/mol]
+    Debye-Huckel a0:    4.0000 [Angstrom]
+
+  H+   (redox species)
+    Charge:   1.00
+    Molar Mass:    1.0079 [g/mol]
+    Debye-Huckel a0:    9.0000 [Angstrom]
+
+  Acetate-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   59.0446 [g/mol]
+    Debye-Huckel a0:    4.5000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  Acetate-                        
+        -1.0000  H+                              
+         1.0000  Acetic_acid(aq)                 
+      logK:     4.7812     4.7572     4.8080     4.9438     5.1953     5.5241     5.9420     6.5094
+
+  H2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:    2.0159 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  H2(aq)                          
+        -0.5000  O2(g)                           
+         1.0000  H2O                             
+      logK:    49.1500    44.6575    39.4400    34.6224    29.8242    25.9892    22.8409    20.1881
+
+  Tracer   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    0.0000 [Angstrom]
+
+  CH4(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  CH4(aq)                         
+         1.0000  HCO3-                           
+         1.0000  H2O                             
+         1.0000  H+                              
+        -2.0000  O2(g)                           
+      logK:   152.5068   138.3445   121.9181   106.7680    91.6845    79.6132    69.6577    61.1712
+
+  Fe++   (redox species)
+    Charge:   2.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    6.0000 [Angstrom]
+
+  Fe+++   (redox species)
+    Charge:   3.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    9.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  Fe+++                           
+        -0.5000  H2O                             
+         0.2500  O2(g)                           
+         1.0000  Fe++                            
+         1.0000  H+                              
+      logK:    -9.3541    -7.7654    -5.8970    -4.1507    -2.3795    -0.9223     0.3233     1.4215
+
+
+ Secondary Species:
+  OH-
+    Charge:  -1.00
+    Molar Mass:   17.0073 [g/mol]
+    Debye-Huckel a0:    3.5000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  OH-                             
+        -1.0000  H+                              
+         1.0000  H2O                             
+      logK:    14.9398    13.9951    13.0272    12.2551    11.6308    11.2836    11.1675    11.3002
+
+  CO2(aq)
+    Charge:   0.00
+    Molar Mass:   44.0098 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  CO2(aq)                         
+        -1.0000  H2O                             
+         1.0000  H+                              
+         1.0000  HCO3-                           
+      logK:    -6.5804    -6.3447    -6.2684    -6.3882    -6.7235    -7.1969    -7.7868    -8.5280
+
+
+ Gas Components:
+  CO2(g)
+    Molar Mass:   44.0098 [g/mol]
+    Gas Reaction: 
+        -1.0000  CO2(g)                          
+        -1.0000  H2O                             
+         1.0000  H+                              
+         1.0000  HCO3-                           
+      logK:    -7.6765    -7.8136    -8.0527    -8.3574    -8.7692    -9.2165    -9.7202   -10.3393
+
+  O2(g)
+    Molar Mass:   31.9988 [g/mol]
+    Gas Reaction: 
+        -1.0000  O2(g)                           
+         1.0000  O2(aq)                          
+      logK:    -2.6567    -2.8983    -3.0633    -3.1076    -3.0354    -2.8742    -2.6488    -2.3537
+
+
+ Minerals: None
+
+ Surface Complexation Reactions: None
+
+   Surface Complexes: None
+
+ Ion Exchange Reactions: None
+
+ ! ************************************************************************** !
+
+
+ ! ************************************************************************** !
+
+ Final Basis
+
+ Primary Species:
+  DOM1   (redox species)
+    Charge:   0.00
+    Molar Mass:  180.1566 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  O2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:   31.9988 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  HCO3-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   61.0171 [g/mol]
+    Debye-Huckel a0:    4.0000 [Angstrom]
+
+  H+   (redox species)
+    Charge:   1.00
+    Molar Mass:    1.0079 [g/mol]
+    Debye-Huckel a0:    9.0000 [Angstrom]
+
+  Acetate-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   59.0446 [g/mol]
+    Debye-Huckel a0:    4.5000 [Angstrom]
+
+  H2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:    2.0159 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  Tracer   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    0.0000 [Angstrom]
+
+  CH4(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  Fe++   (redox species)
+    Charge:   2.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    6.0000 [Angstrom]
+
+  Fe+++   (redox species)
+    Charge:   3.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    9.0000 [Angstrom]
+
+
+ Secondary Species:
+  OH-
+    Charge:  -1.00
+    Molar Mass:   17.0073 [g/mol]
+    Debye-Huckel a0:    3.5000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  OH-                             
+         1.0000  H2O                             
+        -1.0000  H+                              
+      logK:    14.9398    13.9951    13.0272    12.2551    11.6308    11.2836    11.1675    11.3002
+
+  CO2(aq)
+    Charge:   0.00
+    Molar Mass:   44.0098 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  CO2(aq)                         
+        -1.0000  H2O                             
+         1.0000  HCO3-                           
+         1.0000  H+                              
+      logK:    -6.5804    -6.3447    -6.2684    -6.3882    -6.7235    -7.1969    -7.7868    -8.5280
+
+
+ Gas Components:
+  CO2(g)
+    Molar Mass:   44.0098 [g/mol]
+    Gas Reaction: 
+        -1.0000  CO2(g)                          
+        -1.0000  H2O                             
+         1.0000  HCO3-                           
+         1.0000  H+                              
+      logK:    -7.6765    -7.8136    -8.0527    -8.3574    -8.7692    -9.2165    -9.7202   -10.3393
+
+  O2(g)
+    Molar Mass:   31.9988 [g/mol]
+    Gas Reaction: 
+        -1.0000  O2(g)                           
+         1.0000  O2(aq)                          
+      logK:    -2.6567    -2.8983    -3.0633    -3.1076    -3.0354    -2.8742    -2.6488    -2.3537
+
+
+ Minerals: None
+
+ Surface Complexation Reactions: None
+
+   Surface Complexes: None
+
+ Ion Exchange Reactions: None
+
+ ! ************************************************************************** !
+
+--------------------------------------------------------------------------------
+
+    10  Primary Species
+
+              DOM1                  O2(aq)                HCO3-               
+              H+                    Acetate-              H2(aq)              
+              Tracer                CH4(aq)               Fe++                
+              Fe+++               
+
+     2  Secondary Complex Species
+
+              OH-                   CO2(aq)             
+
+     0  Active Gas Species
+
+
+
+     2  Passive Gas Species
+
+              CO2(g)                O2(g)               
+
+     0  Reference Minerals
+
+
+
+     0  Kinetic Mineral Reactions
+
+
+
+     0  Ion Exchange Reactions
+
+     0  Ion Exchange Cations
+--------------------------------------------------------------------------------
+Domain Bounds (x y z):
+    0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+    6.0000000000E+00  1.0000000000E+00  1.0000000000E+00
+ Extent of Gridded Domain
+  X: 0.0000000000000000 - 6.0000000000000000
+  Y: 0.0000000000000000 - 1.0000000000000000
+  Z: 0.0000000000000000 - 1.0000000000000000
+
+  Setting up TRAN Realization
+  Finished setting up TRAN Realization
+
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Initial Condition
+
+--------------------------------------------------------------------------------
+     Transport Condition:   initial
+                  Region:   all
+--------------------------------------------------------------------------------
+
+  Transport Condition: initial
+
+  Constraint: rainfall
+  ----------------------------------------------------------------------------
+        iterations:     9
+                pH:   6.0000
+                pe:  14.7121
+                Eh:   0.8704
+    ionic strength:   3.5851E-06 [mol/L]
+    charge balance:  -5.1512E-06
+          pressure:   1.0132E+05 [Pa]
+       temperature:    25.00 [C]
+       density H2O:   997.16 [kg/m^3]
+ ln / activity H2O:   0.0000E+00  1.0000E+00    [---]
+ mole fraction H2O:   9.9999E-01    [---]
+ mass fraction H2O:   9.9999E-01    [---]
+  ----------------------------------------------------------------------------
+
+  primary                   free        total
+  species                   molal       molal       act coef     constraint
+  ----------------------------------------------------------------------------
+  DOM1                      1.0028E-10  1.0028E-10  1.0000E+00    total aq
+  O2(aq)                    2.6541E-04  2.6541E-04  1.0000E+00    O2(g)
+  HCO3-                     6.1578E-06  1.9746E-05  9.9778E-01    CO2(g)
+  H+                        1.0022E-06  1.4580E-05  9.9779E-01    pH
+  Acetate-                  1.0028E-10  1.0028E-10  9.9778E-01    total aq
+  H2(aq)                    1.0028E-10  1.0028E-10  1.0000E+00    total aq
+  Tracer                    1.0028E-10  1.0028E-10  1.0000E+00    total aq
+  CH4(aq)                   1.0028E-10  1.0028E-10  1.0000E+00    total aq
+  Fe++                      1.0028E-15  1.0028E-15  9.9115E-01    total aq
+  Fe+++                     1.0028E-15  1.0028E-15  9.8024E-01    total aq
+
+  complex                   molality    act coef        logK
+  ----------------------------------------------------------------------------
+  CO2(aq)                   1.3588E-05  1.0000E+00   -6.3447E+00
+  OH-                       1.0136E-08  9.9778E-01    1.3995E+01
+
+  gas              par pres [bars]  conc [mol/m^3]  log K
+  ----------------------------------------------------------------------------
+  CO2(g)           4.0000E-04       1.6136E-02      -7.8136E+00
+  O2(g)            2.1000E-01       8.4713E+00      -2.8983E+00
+
+
+--------------------------------------------------------------------------------
+
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Boundary Condition
+
+--------------------------------------------------------------------------------
+     Transport Condition:   initial
+                  Region:   east
+--------------------------------------------------------------------------------
+
+  Transport Condition: initial
+
+  Constraint: rainfall
+  ----------------------------------------------------------------------------
+        iterations:     9
+                pH:   6.0000
+                pe:  14.7121
+                Eh:   0.8704
+    ionic strength:   3.5851E-06 [mol/L]
+    charge balance:  -5.1512E-06
+          pressure:   1.0132E+05 [Pa]
+       temperature:    25.00 [C]
+       density H2O:   997.16 [kg/m^3]
+ ln / activity H2O:   0.0000E+00  1.0000E+00    [---]
+ mole fraction H2O:   9.9999E-01    [---]
+ mass fraction H2O:   9.9999E-01    [---]
+  ----------------------------------------------------------------------------
+
+  primary                   free        total
+  species                   molal       molal       act coef     constraint
+  ----------------------------------------------------------------------------
+  DOM1                      1.0028E-10  1.0028E-10  1.0000E+00    total aq
+  O2(aq)                    2.6541E-04  2.6541E-04  1.0000E+00    O2(g)
+  HCO3-                     6.1578E-06  1.9746E-05  9.9778E-01    CO2(g)
+  H+                        1.0022E-06  1.4580E-05  9.9779E-01    pH
+  Acetate-                  1.0028E-10  1.0028E-10  9.9778E-01    total aq
+  H2(aq)                    1.0028E-10  1.0028E-10  1.0000E+00    total aq
+  Tracer                    1.0028E-10  1.0028E-10  1.0000E+00    total aq
+  CH4(aq)                   1.0028E-10  1.0028E-10  1.0000E+00    total aq
+  Fe++                      1.0028E-15  1.0028E-15  9.9115E-01    total aq
+  Fe+++                     1.0028E-15  1.0028E-15  9.8024E-01    total aq
+
+  complex                   molality    act coef        logK
+  ----------------------------------------------------------------------------
+  CO2(aq)                   1.3588E-05  1.0000E+00   -6.3447E+00
+  OH-                       1.0136E-08  9.9778E-01    1.3995E+01
+
+  gas              par pres [bars]  conc [mol/m^3]  log K
+  ----------------------------------------------------------------------------
+  CO2(g)           4.0000E-04       1.6136E-02      -7.8136E+00
+  O2(g)            2.1000E-01       8.4713E+00      -2.8983E+00
+
+
+--------------------------------------------------------------------------------
+Default HDF5 method is used in Initialization
+
+ Requested processors and decomposition =     1, npx,y,z=   -1  -1  -1
+ Actual decomposition: npx,y,z=    1   1   1
+
+mode = Reactive Transport
+  Beginning setup of TRAN SNES
+  Finished setting up TRAN SNES
+
+TRAN Time Stepper SNES
+      maximum number of steps: 999999
+constant time steps threshold: 5
+       maximum number of cuts: 16
+             reduction factor: 5.000000E-01
+        maximum growth factor: 2.000000E+00
+                 acceleration: on
+       acceleration threshold: 5
+       number of ramp entries: 5
+                ramp entry #1: 2.0000
+                ramp entry #2: 2.0000
+                ramp entry #3: 2.0000
+                ramp entry #4: 2.0000
+                ramp entry #5: 2.0000
+                ramp entry #6: 1.8000
+                ramp entry #7: 1.6000
+                ramp entry #8: 1.4000
+                ramp entry #9: 1.2000
+               ramp entry #10: 1.0000
+               ramp entry #11: 1.0000
+               ramp entry #12: 1.0000
+               ramp entry #13: 1.0000
+
+TRAN Newton Solver
+                         atol: 1.000000E-50
+                         rtol: 1.000000E-08
+                         stol: 1.000000E-08
+                         dtol: 1.000000E+04
+                      maxnorm: 1.000000E+20
+                    inftolres: -9.990000E+02
+                    inftolupd: -9.990000E+02
+                 inftolrelupd: -9.990000E+02
+                 inftolsclres: -9.990000E+02
+                     max iter: 50
+                     min iter: 1
+                         maxf: 10000
+                  matrix type: baij
+         precond. matrix type: baij
+               inexact newton: off
+            print convergence: on
+   print detailed convergence: off
+          check infinity norm: on
+
+TRAN Linear Solver
+                       solver: preonly
+               preconditioner: lu
+                         atol: 1.000000E-50
+                         rtol: 1.000000E-05
+                         dtol: 1.000000E+04
+            maximum iteration: 10000
+
+ --> creating hdf5 output file: /mnt/d/permafrost_transport_demo/data/pflotran_dir/arctic-surface_all.h5
+      0.02 Seconds to write HDF5 file.
+
+ Finished Initialization
+
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 8.43E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 8.39E-09 iu: 0.00E+00 rsn:   0
+  1 2r: 3.17E-11 2x: 7.37E+02 2u: 2.24E-02 ir: 3.16E-11 iu: 7.55E-03 rsn:   0
+  2 2r: 4.54E-16 2x: 7.37E+02 2u: 8.45E-05 ir: 4.52E-16 iu: 2.86E-05 rsn:   0
+  3 2r: 2.35E-21 2x: 7.37E+02 2u: 1.21E-09 ir: 6.35E-22 iu: 4.09E-10 rsn: rtol
+
+ Step      1 Time=  1.14155E-04 Dt=  1.14155E-04 [y] conv_reason: 3
+  newton =   3 [       3] linear =     3 [         3] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 3 / 3
+  --> SNES Residual: 0.234687E-20 0.234687E-20 0.635275E-21
+  --> max change:  dcmx=   2.0026E-06  dc/dt=   5.5629E-10 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 8.36E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 8.32E-09 iu: 0.00E+00 rsn:   0
+  1 2r: 6.22E-11 2x: 7.37E+02 2u: 4.43E-02 ir: 6.19E-11 iu: 1.49E-02 rsn:   0
+  2 2r: 3.51E-15 2x: 7.37E+02 2u: 3.33E-04 ir: 3.49E-15 iu: 1.13E-04 rsn:   0
+  3 2r: 9.46E-22 2x: 7.37E+02 2u: 1.88E-08 ir: 4.24E-22 iu: 6.37E-09 rsn: rtol
+
+ Step      2 Time=  3.42466E-04 Dt=  2.28311E-04 [y] conv_reason: 3
+  newton =   3 [       6] linear =     3 [         6] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 3 / 3
+  --> SNES Residual: 0.946370E-21 0.946370E-21 0.423516E-21
+  --> max change:  dcmx=   3.9377E-06  dc/dt=   5.4690E-10 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 8.22E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 8.18E-09 iu: 0.00E+00 rsn:   0
+  1 2r: 1.19E-10 2x: 7.37E+02 2u: 8.72E-02 ir: 1.19E-10 iu: 2.93E-02 rsn:   0
+  2 2r: 2.62E-14 2x: 7.37E+02 2u: 1.30E-03 ir: 2.61E-14 iu: 4.39E-04 rsn:   0
+  3 2r: 1.34E-21 2x: 7.37E+02 2u: 2.85E-07 ir: 1.27E-21 iu: 9.65E-08 rsn: rtol
+
+ Step      3 Time=  7.99087E-04 Dt=  4.56621E-04 [y] conv_reason: 3
+  newton =   3 [       9] linear =     3 [         9] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 3 / 3
+  --> SNES Residual: 0.133686E-20 0.133686E-20 0.127055E-20
+  --> max change:  dcmx=   7.6149E-06  dc/dt=   5.2881E-10 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 7.96E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 7.91E-09 iu: 0.00E+00 rsn:   0
+  1 2r: 2.21E-10 2x: 7.37E+02 2u: 1.69E-01 ir: 2.20E-10 iu: 5.66E-02 rsn:   0
+  2 2r: 1.84E-13 2x: 7.37E+02 2u: 4.92E-03 ir: 1.83E-13 iu: 1.67E-03 rsn:   0
+  3 2r: 1.28E-19 2x: 7.37E+02 2u: 4.10E-06 ir: 1.27E-19 iu: 1.39E-06 rsn: rtol
+
+ Step      4 Time=  1.71233E-03 Dt=  9.13242E-04 [y] conv_reason: 3
+  newton =   3 [      12] linear =     3 [        12] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 3 / 3
+  --> SNES Residual: 0.128090E-18 0.128090E-18 0.127028E-18
+  --> max change:  dcmx=   1.4261E-05  dc/dt=   4.9518E-10 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 7.49E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 7.41E-09 iu: 0.00E+00 rsn:   0
+  1 2r: 3.82E-10 2x: 7.38E+02 2u: 3.21E-01 ir: 3.80E-10 iu: 1.06E-01 rsn:   0
+  2 2r: 1.15E-12 2x: 7.38E+02 2u: 1.78E-02 ir: 1.14E-12 iu: 6.02E-03 rsn:   0
+  3 2r: 1.05E-17 2x: 7.38E+02 2u: 5.37E-05 ir: 1.04E-17 iu: 1.82E-05 rsn: rtol
+
+ Step      5 Time=  3.53881E-03 Dt=  1.82648E-03 [y] conv_reason: 3
+  newton =   3 [      15] linear =     3 [        15] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 3 / 3
+  --> SNES Residual: 0.105000E-16 0.105000E-16 0.103584E-16
+  --> max change:  dcmx=   2.5154E-05  dc/dt=   4.3670E-10 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 6.75E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 6.53E-09 iu: 0.00E+00 rsn:   0
+  1 2r: 5.84E-10 2x: 7.38E+02 2u: 5.96E-01 ir: 5.81E-10 iu: 1.88E-01 rsn:   0
+  2 2r: 5.93E-12 2x: 7.38E+02 2u: 5.95E-02 ir: 5.79E-12 iu: 2.00E-02 rsn:   0
+  3 2r: 6.04E-16 2x: 7.38E+02 2u: 6.00E-04 ir: 5.86E-16 iu: 2.03E-04 rsn:   0
+  4 2r: 1.32E-22 2x: 7.38E+02 2u: 6.17E-08 ir: 3.97E-23 iu: 2.05E-08 rsn: rtol
+
+ Step      6 Time=  7.19178E-03 Dt=  3.65297E-03 [y] conv_reason: 3
+  newton =   4 [      19] linear =     4 [        19] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 4 / 4
+  --> SNES Residual: 0.131570E-21 0.131570E-21 0.397047E-22
+  --> max change:  dcmx=   3.9886E-05  dc/dt=   3.4623E-10 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 5.74E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 5.18E-09 iu: 0.00E+00 rsn:   0
+  1 2r: 7.40E-10 2x: 7.38E+02 2u: 1.08E+00 ir: 7.31E-10 iu: 3.08E-01 rsn:   0
+  2 2r: 2.18E-11 2x: 7.38E+02 2u: 1.79E-01 ir: 2.12E-11 iu: 5.83E-02 rsn:   0
+  3 2r: 2.01E-14 2x: 7.38E+02 2u: 5.26E-03 ir: 1.88E-14 iu: 1.77E-03 rsn:   0
+  4 2r: 1.59E-20 2x: 7.38E+02 2u: 4.73E-06 ir: 1.48E-20 iu: 1.57E-06 rsn: rtol
+
+ Step      7 Time=  1.44977E-02 Dt=  7.30594E-03 [y] conv_reason: 3
+  newton =   4 [      23] linear =     4 [        23] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 4 / 4
+  --> SNES Residual: 0.158578E-19 0.158578E-19 0.147586E-19
+  --> max change:  dcmx=   5.3120E-05  dc/dt=   2.3056E-10 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 4.62E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 3.45E-09 iu: 0.00E+00 rsn:   0
+  1 2r: 7.70E-10 2x: 7.38E+02 2u: 1.88E+00 ir: 6.94E-10 iu: 4.57E-01 rsn:   0
+  2 2r: 4.93E-11 2x: 7.38E+02 2u: 4.80E-01 ir: 4.86E-11 iu: 1.43E-01 rsn:   0
+  3 2r: 3.01E-13 2x: 7.38E+02 2u: 3.42E-02 ir: 2.77E-13 iu: 1.12E-02 rsn:   0
+  4 2r: 1.00E-17 2x: 7.38E+02 2u: 1.92E-04 ir: 8.78E-18 iu: 6.30E-05 rsn: rtol
+
+ Step      8 Time=  2.91096E-02 Dt=  1.46119E-02 [y] conv_reason: 3
+  newton =   4 [      27] linear =     4 [        27] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 4 / 4
+  --> SNES Residual: 0.100284E-16 0.100284E-16 0.877840E-17
+  --> max change:  dcmx=   6.6795E-05  dc/dt=   1.4495E-10 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 3.61E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 2.17E-09 iu: 0.00E+00 rsn:   0
+  1 2r: 7.07E-10 2x: 7.39E+02 2u: 3.16E+00 ir: 4.58E-10 iu: 6.12E-01 rsn:   0
+  2 2r: 7.10E-11 2x: 7.39E+02 2u: 1.14E+00 ir: 6.12E-11 iu: 2.84E-01 rsn:   0
+  3 2r: 1.62E-12 2x: 7.39E+02 2u: 1.65E-01 ir: 1.55E-12 iu: 4.90E-02 rsn:   0
+  4 2r: 1.16E-15 2x: 7.39E+02 2u: 3.90E-03 ir: 9.96E-16 iu: 1.24E-03 rsn:   0
+  5 2r: 5.06E-22 2x: 7.39E+02 2u: 2.57E-06 ir: 3.86E-22 iu: 1.09E-06 rsn: rtol
+
+ Step      9 Time=  5.83333E-02 Dt=  2.92237E-02 [y] conv_reason: 3
+  newton =   5 [      32] linear =     5 [        32] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 5 / 5
+  --> SNES Residual: 0.506210E-21 0.506210E-21 0.385518E-21
+  --> max change:  dcmx=   8.1315E-05  dc/dt=   8.8233E-11 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 2.78E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 1.32E-09 iu: 0.00E+00 rsn:   0
+  1 2r: 6.09E-10 2x: 7.41E+02 2u: 5.08E+00 ir: 3.30E-10 iu: 7.46E-01 rsn:   0
+  2 2r: 8.07E-11 2x: 7.42E+02 2u: 2.39E+00 ir: 5.29E-11 iu: 4.65E-01 rsn:   0
+  3 2r: 3.86E-12 2x: 7.42E+02 2u: 6.02E-01 ir: 2.98E-12 iu: 1.48E-01 rsn:   0
+  4 2r: 2.10E-14 2x: 7.42E+02 2u: 4.22E-02 ir: 1.94E-14 iu: 1.29E-02 rsn:   0
+  5 2r: 9.29E-19 2x: 7.42E+02 2u: 2.46E-04 ir: 7.58E-19 iu: 1.06E-04 rsn: rtol
+
+ Step     10 Time=  1.16781E-01 Dt=  5.84475E-02 [y] conv_reason: 3
+  newton =   5 [      37] linear =     5 [        37] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 5 / 5
+  --> SNES Residual: 0.928885E-18 0.928885E-18 0.758247E-18
+  --> max change:  dcmx=   9.4448E-05  dc/dt=   5.1241E-11 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 2.10E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 7.66E-10 iu: 0.00E+00 rsn:   0
+  1 2r: 4.97E-10 2x: 7.46E+02 2u: 7.85E+00 ir: 2.09E-10 iu: 8.47E-01 rsn:   0
+  2 2r: 7.93E-11 2x: 7.47E+02 2u: 4.42E+00 ir: 3.90E-11 iu: 6.42E-01 rsn:   0
+  3 2r: 6.00E-12 2x: 7.48E+02 2u: 1.67E+00 ir: 3.41E-12 iu: 3.24E-01 rsn:   0
+  4 2r: 1.05E-13 2x: 7.48E+02 2u: 2.65E-01 ir: 6.79E-14 iu: 6.82E-02 rsn:   0
+  5 2r: 8.88E-17 2x: 7.48E+02 2u: 7.48E-03 ir: 7.87E-17 iu: 2.45E-03 rsn:   0
+  6 2r: 1.34E-22 2x: 7.48E+02 2u: 7.27E-06 ir: 9.38E-23 iu: 3.01E-06 rsn: rtol
+
+ Step     11 Time=  2.33676E-01 Dt=  1.16895E-01 [y] conv_reason: 3
+  newton =   6 [      43] linear =     6 [        43] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 6 / 6
+  --> SNES Residual: 0.134446E-21 0.134446E-21 0.937509E-22
+  --> max change:  dcmx=   1.0488E-04  dc/dt=   2.8449E-11 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 1.56E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 4.26E-10 iu: 0.00E+00 rsn:   0
+  1 2r: 1.03E-10 2x: 7.49E+02 2u: 3.01E+00 ir: 3.58E-11 iu: 4.28E-01 rsn:   0
+  2 2r: 1.67E-12 2x: 7.50E+02 2u: 6.43E-01 ir: 7.87E-13 iu: 1.22E-01 rsn:   0
+  3 2r: 2.26E-15 2x: 7.50E+02 2u: 3.40E-02 ir: 1.51E-15 iu: 8.20E-03 rsn:   0
+  4 2r: 2.11E-20 2x: 7.50E+02 2u: 1.17E-04 ir: 1.89E-20 iu: 3.38E-05 rsn: rtol
+
+ Step     12 Time=  2.50000E-01 Dt=  1.63242E-02 [y] conv_reason: 3
+  newton =   4 [      47] linear =     4 [        47] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 4 / 4
+  --> SNES Residual: 0.211385E-19 0.211385E-19 0.189085E-19
+  --> max change:  dcmx=   1.4247E-05  dc/dt=   2.7675E-11 [mol/s]
+
+ --> appending to hdf5 output file: /mnt/d/permafrost_transport_demo/data/pflotran_dir/arctic-surface_all.h5
+      0.02 Seconds to write HDF5 file.
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 1.54E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 4.14E-10 iu: 0.00E+00 rsn:   0
+  1 2r: 2.18E-10 2x: 7.53E+02 2u: 6.70E+00 ir: 7.21E-11 iu: 7.20E-01 rsn:   0
+  2 2r: 1.42E-11 2x: 7.54E+02 2u: 2.94E+00 ir: 5.98E-12 iu: 4.25E-01 rsn:   0
+  3 2r: 2.47E-13 2x: 7.54E+02 2u: 6.40E-01 ir: 1.30E-13 iu: 1.21E-01 rsn:   0
+  4 2r: 3.69E-16 2x: 7.54E+02 2u: 3.36E-02 ir: 2.56E-16 iu: 7.91E-03 rsn:   0
+  5 2r: 3.58E-21 2x: 7.54E+02 2u: 1.12E-04 ir: 2.99E-21 iu: 3.15E-05 rsn: rtol
+
+ Step     13 Time=  3.08447E-01 Dt=  5.84475E-02 [y] conv_reason: 3
+  newton =   5 [      52] linear =     5 [        52] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 5 / 5
+  --> SNES Residual: 0.357746E-20 0.357746E-20 0.299285E-20
+  --> max change:  dcmx=   4.3951E-05  dc/dt=   2.3845E-11 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 1.44E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 3.57E-10 iu: 0.00E+00 rsn:   0
+  1 2r: 2.61E-10 2x: 7.60E+02 2u: 9.78E+00 ir: 7.67E-11 iu: 8.32E-01 rsn:   0
+  2 2r: 2.61E-11 2x: 7.63E+02 2u: 5.40E+00 ir: 9.29E-12 iu: 6.15E-01 rsn:   0
+  3 2r: 9.63E-13 2x: 7.64E+02 2u: 1.91E+00 ir: 4.22E-13 iu: 2.88E-01 rsn:   0
+  4 2r: 6.34E-15 2x: 7.64E+02 2u: 2.60E-01 ir: 3.31E-15 iu: 5.02E-02 rsn:   0
+  5 2r: 1.56E-18 2x: 7.64E+02 2u: 5.47E-03 ir: 1.05E-18 iu: 1.30E-03 rsn: rtol
+
+ Step     14 Time=  4.25342E-01 Dt=  1.16895E-01 [y] conv_reason: 3
+  newton =   5 [      57] linear =     5 [        57] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 5 / 5
+  --> SNES Residual: 0.155966E-17 0.155966E-17 0.105184E-17
+  --> max change:  dcmx=   6.7625E-05  dc/dt=   1.8345E-11 [mol/s]
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 1.27E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 2.74E-10 iu: 0.00E+00 rsn:   0
+  1 2r: 1.63E-10 2x: 7.69E+02 2u: 8.77E+00 ir: 4.24E-11 iu: 7.55E-01 rsn:   0
+  2 2r: 8.86E-12 2x: 7.72E+02 2u: 4.12E+00 ir: 2.86E-12 iu: 4.79E-01 rsn:   0
+  3 2r: 1.21E-13 2x: 7.72E+02 2u: 1.04E+00 ir: 4.96E-14 iu: 1.59E-01 rsn:   0
+  4 2r: 1.63E-16 2x: 7.72E+02 2u: 7.24E-02 ir: 8.76E-17 iu: 1.41E-02 rsn:   0
+  5 2r: 2.63E-21 2x: 7.72E+02 2u: 4.20E-04 ir: 1.78E-21 iu: 1.00E-04 rsn: rtol
+
+ Step     15 Time=  5.00000E-01 Dt=  7.46575E-02 [y] conv_reason: 3
+  newton =   5 [      62] linear =     5 [        62] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 5 / 5
+  --> SNES Residual: 0.262520E-20 0.262520E-20 0.178301E-20
+  --> max change:  dcmx=   3.9048E-05  dc/dt=   1.6585E-11 [mol/s]
+
+ --> appending to hdf5 output file: /mnt/d/permafrost_transport_demo/data/pflotran_dir/arctic-surface_all.h5
+      0.01 Seconds to write HDF5 file.
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 1.21E-09 2x: 0.00E+00 2u: 0.00E+00 ir: 2.48E-10 iu: 0.00E+00 rsn:   0
+  1 2r: 2.56E-10 2x: 7.84E+02 2u: 1.48E+01 ir: 6.02E-11 iu: 9.10E-01 rsn:   0
+  2 2r: 3.32E-11 2x: 7.90E+02 2u: 9.57E+00 ir: 9.15E-12 iu: 7.76E-01 rsn:   0
+  3 2r: 1.90E-12 2x: 7.93E+02 2u: 4.75E+00 ir: 6.15E-13 iu: 5.13E-01 rsn:   0
+  4 2r: 2.87E-14 2x: 7.93E+02 2u: 1.31E+00 ir: 1.10E-14 iu: 1.86E-01 rsn:   0
+  5 2r: 4.75E-17 2x: 7.93E+02 2u: 1.09E-01 ir: 2.23E-17 iu: 1.97E-02 rsn:   0
+  6 2r: 1.23E-21 2x: 7.93E+02 2u: 8.84E-04 ir: 6.84E-22 iu: 1.96E-04 rsn: rtol
+
+ Step     16 Time=  7.50000E-01 Dt=  2.50000E-01 [y] conv_reason: 3
+  newton =   6 [      68] linear =     6 [        68] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 6 / 6
+  --> SNES Residual: 0.122562E-20 0.122562E-20 0.684063E-21
+  --> max change:  dcmx=   8.9959E-05  dc/dt=   1.1410E-11 [mol/s]
+
+ --> appending to hdf5 output file: /mnt/d/permafrost_transport_demo/data/pflotran_dir/arctic-surface_all.h5
+      0.01 Seconds to write HDF5 file.
+
+== REACTIVE TRANSPORT ==========================================================
+  0 2r: 9.94E-10 2x: 0.00E+00 2u: 0.00E+00 ir: 1.71E-10 iu: 0.00E+00 rsn:   0
+  1 2r: 1.84E-10 2x: 8.08E+02 2u: 1.62E+01 ir: 3.71E-11 iu: 9.08E-01 rsn:   0
+  2 2r: 1.93E-11 2x: 8.15E+02 2u: 1.03E+01 ir: 4.68E-12 iu: 7.72E-01 rsn:   0
+  3 2r: 8.17E-13 2x: 8.18E+02 2u: 5.05E+00 ir: 2.38E-13 iu: 5.06E-01 rsn:   0
+  4 2r: 8.39E-15 2x: 8.19E+02 2u: 1.36E+00 ir: 2.94E-15 iu: 1.81E-01 rsn:   0
+  5 2r: 8.90E-18 2x: 8.19E+02 2u: 1.09E-01 ir: 3.81E-18 iu: 1.84E-02 rsn: rtol
+
+ Step     17 Time=  1.00000E+00 Dt=  2.50000E-01 [y] conv_reason: 3
+  newton =   5 [      73] linear =     5 [        73] cuts =  0 [   0]
+  --> SNES Linear/Non-Linear Iterations = 5 / 5
+  --> SNES Residual: 0.890234E-17 0.890234E-17 0.381056E-17
+  --> max change:  dcmx=   6.9856E-05  dc/dt=   8.8605E-12 [mol/s]
+
+ --> appending to hdf5 output file: /mnt/d/permafrost_transport_demo/data/pflotran_dir/arctic-surface_all.h5
+      0.01 Seconds to write HDF5 file.
+
+PMCSubsurfaceTransport
+ Total Time: 5.7054E-02 seconds
+
+ TRAN TS SNES steps = 17  newton = 73  linear = 73  cuts = 0
+ TRAN TS SNES Wasted Linear Iterations = 0
+ TRAN TS SNES Wasted Newton Iterations = 0
+ TRAN TS SNES time = 0.1 seconds
+
+ Wall Clock Time:  1.3630E-01 [sec]   2.2716E-03 [min]   3.7860E-05 [hr]
