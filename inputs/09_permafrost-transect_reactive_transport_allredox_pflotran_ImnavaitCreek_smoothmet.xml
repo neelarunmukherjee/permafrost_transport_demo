@@ -429,12 +429,12 @@
       <Parameter name="PK type" type="string" value="surface subsurface transport" />
       <Parameter name="PK name" type="string" value="surface subsurface transport" />
       <Parameter name="PKs order" type="Array(string)" value="{subsurface transport, surface transport}" />
-      <Parameter name="component names" type="Array(string)" value="{DOM1,O2(aq),HCO3-,H+}" />
+      <Parameter name="component names" type="Array(string)" value="{DOM1,O2(aq),HCO3-,H+,Acetate-,H2(aq),Tracer,Fe++,Fe+++,CH4(aq)}" />
     </ParameterList>
 
     <ParameterList name="subsurface transport">
       <Parameter name="PK type" type="string" value="transport ATS" />
-      <Parameter name="component names" type="Array(string)" value="{DOM1,O2(aq),HCO3-,H+}" />
+      <Parameter name="component names" type="Array(string)" value="{DOM1,O2(aq),HCO3-,H+,Acetate-,H2(aq),Tracer,Fe++,Fe+++,CH4(aq)}" />
       <Parameter name="advection spatial discretization order" type="int" value="1" />
       <Parameter name="temporal discretization order" type="int" value="1" />
       <Parameter name="liquid water content key" type="string" value="liquid_water_content"/>
@@ -490,7 +490,7 @@
       <Parameter name="previous saturation liquid key" type="string" value="surface-prev_unfrozen_effective_depth" />
       <Parameter name="liquid water content key" type="string" value="surface-liquid_water_content"/>
       <Parameter name="water source in meters" type="bool" value="true"/>
-      <Parameter name="component names" type="Array(string)" value="{DOM1,O2(aq),HCO3-,H+}" />
+      <Parameter name="component names" type="Array(string)" value="{DOM1,O2(aq),HCO3-,H+,Acetate-,H2(aq),Tracer,Fe++,Fe+++,CH4(aq)}" />
       <Parameter name="spatial discretization order" type="int" value="1" />
       <Parameter name="temporal discretization order" type="int" value="1" />
       <Parameter name="cfl" type="double" value=" 1" />
@@ -508,7 +508,7 @@
           <ParameterList name="Rain condition" type="ParameterList">
             <Parameter name="water source key" type="string" value="surface-precipitation_rain"/>
             <Parameter name="regions" type="Array(string)" value="{surface domain}"/>
-            <Parameter name="solutes" type="Array(string)" value="{DOM1,O2(aq),HCO3-,H+}"/>
+            <Parameter name="solutes" type="Array(string)" value="{DOM1,O2(aq),HCO3-,H+,Acetate-,H2(aq),Tracer,Fe++,Fe+++,CH4(aq)}"/>
             <Parameter name="times" type="Array(double)" value="{0.0, 8640000.0}"/>
             <Parameter name="geochemical conditions" type="Array(string)" value="{rainfall,rainfall}"/>
             <Parameter name="time functions" type="Array(string)" value="{constant}"/>              
@@ -523,7 +523,7 @@
       <Parameter name="PK type" type="string" value="surface subsurface reactive transport" />
       <Parameter name="PK name" type="string" value="reactive transport" />
       <Parameter name="PKs order" type="Array(string)" value="{chemistry coupler, surface-subsurface transport coupler}" />
-      <Parameter name="component names" type="Array(string)" value="{DOM1,O2(aq),HCO3-,H+}" />
+      <Parameter name="component names" type="Array(string)" value="{DOM1,O2(aq),HCO3-,H+,Acetate-,H2(aq),Tracer,Fe++,Fe+++,CH4(aq)}" />
       <Parameter name="transport index" type="int" value="1" />
     </ParameterList>
 
@@ -536,7 +536,7 @@
     <ParameterList name="chemistry surface" type="ParameterList">
       <Parameter name="PK type" type="string" value="chemistry alquimia"/>
       <Parameter name="engine" type="string" value="PFloTran"/> <!--declare engine-->
-      <Parameter name="engine input file" type="string" value="../../data/pflotran_dir/microbe-surface.in"/>
+      <Parameter name="engine input file" type="string" value="../../data/pflotran_dir/arctic-surface_all.in"/>
       <Parameter name="domain name" type="string" value="surface"/>
       <Parameter name="saturation liquid key" type="string" value="surface-ponded_depth"/>
       <Parameter name="auxiliary data" type="Array(string)" value="{pH}"/>
@@ -559,10 +559,10 @@
     <ParameterList name="chemistry subsurface" type="ParameterList">
       <Parameter name="PK type" type="string" value="chemistry alquimia"/>
       <Parameter name="engine" type="string" value="PFloTran"/>
-      <Parameter name="engine input file" type="string" value="../../data/pflotran_dir/microbe-subsurface.in"/>
+      <Parameter name="engine input file" type="string" value="../../data/pflotran_dir/arctic-subsurface_all.in"/>
       <Parameter name="domain name" type="string" value="domain"/>
       <Parameter name="auxiliary data" type="Array(string)" value="{pH}"/>
-      <Parameter name="minerals" type="Array(string)" value="{SOM}"/> 
+      <Parameter name="minerals" type="Array(string)" value="{SOM,Fe(OH)3}"/> 
       <Parameter name="debug cells" type="Array(int)" value="{0}"/>
       <ParameterList name="initial conditions" type="ParameterList">
         <ParameterList name="geochemical conditions" type="ParameterList">
@@ -1200,7 +1200,7 @@
             <Parameter name="region" type="string" value="domain"/>
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function" type="ParameterList">
-              <Parameter name="number of dofs" type="int" value="1"/>
+              <Parameter name="number of dofs" type="int" value="2"/>
               <Parameter name="function type" type="string" value="composite function"/>
               <ParameterList name="dof 1 function" type="ParameterList">
                 <ParameterList name="function-constant" type="ParameterList">
@@ -1218,7 +1218,7 @@
             <Parameter name="region" type="string" value="domain"/>
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function">
-              <Parameter name="number of dofs" type="int" value="1"/>
+              <Parameter name="number of dofs" type="int" value="2"/>
               <Parameter name="function type" type="string" value="composite function"/>
               <ParameterList name="dof 1 function">
                 <ParameterList name="function-constant">
@@ -1236,7 +1236,7 @@
             <Parameter name="region" type="string" value="domain"/>
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function">
-              <Parameter name="number of dofs" type="int" value="1"/>
+              <Parameter name="number of dofs" type="int" value="2"/>
               <Parameter name="function type" type="string" value="composite function"/>
               <ParameterList name="dof 1 function">
                 <ParameterList name="function-constant">
