@@ -97,25 +97,25 @@ MINERAL_KINETICS
 #   /
 # /
   # DOM aerobic respiration to CO2 and H+ with Hill constant sandboxed 
-  # REACTION_SANDBOX
-  #   NEELRESP
-  # /  
+  REACTION_SANDBOX
+    NEELRESP
+  /  
   # DOM aerobic respiration to CO2 and H+
 
-  MICROBIAL_REACTION
-    REACTION 1.0e+00 DOM1  + 1.0e+00 O2(aq)  -> 1.0e+00 HCO3- + 1.0 H+ 
-    RATE_CONSTANT       2.00e-06
-    MONOD
-      SPECIES_NAME        O2(aq)
-      HALF_SATURATION_CONSTANT 1.0e-04
-      THRESHOLD_CONCENTRATION 1.1e-20
-    /
-    MONOD
-      SPECIES_NAME        DOM1
-      HALF_SATURATION_CONSTANT 1.0e-01
-      THRESHOLD_CONCENTRATION 1.1e-20
-    /
-  /
+  # MICROBIAL_REACTION
+  #   REACTION 1.0e+00 DOM1  + 1.0e+00 O2(aq)  -> 1.0e+00 HCO3- + 1.0 H+ 
+  #   RATE_CONSTANT       2.00e-06
+  #   MONOD
+  #     SPECIES_NAME        O2(aq)
+  #     HALF_SATURATION_CONSTANT 1.0e-04
+  #     THRESHOLD_CONCENTRATION 1.1e-20
+  #   /
+  #   MONOD
+  #     SPECIES_NAME        DOM1
+  #     HALF_SATURATION_CONSTANT 1.0e-01
+  #     THRESHOLD_CONCENTRATION 1.1e-20
+  #   /
+  # /
 
   # Microbial fermentation of DOM to acetate, H2, CO2, and a tracer
   MICROBIAL_REACTION
