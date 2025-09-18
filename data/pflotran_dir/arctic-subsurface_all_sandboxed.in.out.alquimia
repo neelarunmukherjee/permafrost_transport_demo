@@ -1,0 +1,357 @@
+ WARNING: Card (NONISOTHERMAL) not found in input file.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"CHEMISTRY,MICROBIAL_REACTION,RATE_CONSTANT units" set to default value.
+"SOMPREFACTOR RATE UNITS" set to default value.
+
+ ! ************************************************************************** !
+
+ Initial Basis
+
+ Primary Species:
+  DOM1   (redox species)
+    Charge:   0.00
+    Molar Mass:  180.1566 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  O2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:   31.9988 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  HCO3-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   61.0171 [g/mol]
+    Debye-Huckel a0:    4.0000 [Angstrom]
+
+  H+   (redox species)
+    Charge:   1.00
+    Molar Mass:    1.0079 [g/mol]
+    Debye-Huckel a0:    9.0000 [Angstrom]
+
+  Acetate-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   59.0446 [g/mol]
+    Debye-Huckel a0:    4.5000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  Acetate-                        
+        -1.0000  H+                              
+         1.0000  Acetic_acid(aq)                 
+      logK:     4.7812     4.7572     4.8080     4.9438     5.1953     5.5241     5.9420     6.5094
+
+  H2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:    2.0159 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  H2(aq)                          
+        -0.5000  O2(g)                           
+         1.0000  H2O                             
+      logK:    49.1500    44.6575    39.4400    34.6224    29.8242    25.9892    22.8409    20.1881
+
+  Tracer   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    0.0000 [Angstrom]
+
+  Fe++   (redox species)
+    Charge:   2.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    6.0000 [Angstrom]
+
+  Fe+++   (redox species)
+    Charge:   3.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    9.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  Fe+++                           
+        -0.5000  H2O                             
+         0.2500  O2(g)                           
+         1.0000  Fe++                            
+         1.0000  H+                              
+      logK:    -9.3541    -7.7654    -5.8970    -4.1507    -2.3795    -0.9223     0.3233     1.4215
+
+  CH4(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  CH4(aq)                         
+         1.0000  HCO3-                           
+         1.0000  H2O                             
+         1.0000  H+                              
+        -2.0000  O2(g)                           
+      logK:   152.5068   138.3445   121.9181   106.7680    91.6845    79.6132    69.6577    61.1712
+
+
+ Secondary Species:
+  OH-
+    Charge:  -1.00
+    Molar Mass:   17.0073 [g/mol]
+    Debye-Huckel a0:    3.5000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  OH-                             
+        -1.0000  H+                              
+         1.0000  H2O                             
+      logK:    14.9398    13.9951    13.0272    12.2551    11.6308    11.2836    11.1675    11.3002
+
+  CO2(aq)
+    Charge:   0.00
+    Molar Mass:   44.0098 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  CO2(aq)                         
+        -1.0000  H2O                             
+         1.0000  H+                              
+         1.0000  HCO3-                           
+      logK:    -6.5804    -6.3447    -6.2684    -6.3882    -6.7235    -7.1969    -7.7868    -8.5280
+
+
+ Gas Components:
+  CO2(g)
+    Molar Mass:   44.0098 [g/mol]
+    Gas Reaction: 
+        -1.0000  CO2(g)                          
+        -1.0000  H2O                             
+         1.0000  H+                              
+         1.0000  HCO3-                           
+      logK:    -7.6765    -7.8136    -8.0527    -8.3574    -8.7692    -9.2165    -9.7202   -10.3393
+
+  O2(g)
+    Molar Mass:   31.9988 [g/mol]
+    Gas Reaction: 
+        -1.0000  O2(g)                           
+         1.0000  O2(aq)                          
+      logK:    -2.6567    -2.8983    -3.0633    -3.1076    -3.0354    -2.8742    -2.6488    -2.3537
+
+
+ Minerals:
+  SOM
+    Molar Mass:  180.1566 [g/mol]
+    Molar Volume:  1.0000E-04 [m^3/mol]
+    Mineral Reaction: 
+        -1.0000  SOM                             
+         1.0000  DOM1                            
+      logK:   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000
+
+  Fe(OH)3
+    Molar Mass:  106.8690 [g/mol]
+    Molar Volume:  3.4360E-05 [m^3/mol]
+    Mineral Reaction: 
+        -1.0000  Fe(OH)3                         
+        -3.0000  H+                              
+         1.0000  Fe+++                           
+         3.0000  H2O                             
+      logK:     6.9971     5.6556     4.1038     2.6878     1.2773     0.1146    -0.9130    -1.8839
+
+
+ Surface Complexation Reactions: None
+
+   Surface Complexes: None
+
+ Ion Exchange Reactions: None
+
+ ! ************************************************************************** !
+
+ WARNING: Inhibition species "O2(aq) not found in microbial reaction.
+ WARNING: Inhibition species "O2(aq) not found in microbial reaction.
+ WARNING: Inhibition species "Fe+++ not found in microbial reaction.
+ WARNING: Inhibition species "O2(aq) not found in microbial reaction.
+ WARNING: Inhibition species "Fe+++ not found in microbial reaction.
+ WARNING: Inhibition species "H+ not found in microbial reaction.
+ WARNING: Inhibition species "H+ not found in microbial reaction.
+ WARNING: Inhibition species "O2(aq) not found in microbial reaction.
+
+ ! ************************************************************************** !
+
+ Final Basis
+
+ Primary Species:
+  DOM1   (redox species)
+    Charge:   0.00
+    Molar Mass:  180.1566 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  O2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:   31.9988 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  HCO3-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   61.0171 [g/mol]
+    Debye-Huckel a0:    4.0000 [Angstrom]
+
+  H+   (redox species)
+    Charge:   1.00
+    Molar Mass:    1.0079 [g/mol]
+    Debye-Huckel a0:    9.0000 [Angstrom]
+
+  Acetate-   (redox species)
+    Charge:  -1.00
+    Molar Mass:   59.0446 [g/mol]
+    Debye-Huckel a0:    4.5000 [Angstrom]
+
+  H2(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:    2.0159 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+  Tracer   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    0.0000 [Angstrom]
+
+  Fe++   (redox species)
+    Charge:   2.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    6.0000 [Angstrom]
+
+  Fe+++   (redox species)
+    Charge:   3.00
+    Molar Mass:   55.8470 [g/mol]
+    Debye-Huckel a0:    9.0000 [Angstrom]
+
+  CH4(aq)   (redox species)
+    Charge:   0.00
+    Molar Mass:    0.0000 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+
+
+ Secondary Species:
+  OH-
+    Charge:  -1.00
+    Molar Mass:   17.0073 [g/mol]
+    Debye-Huckel a0:    3.5000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  OH-                             
+         1.0000  H2O                             
+        -1.0000  H+                              
+      logK:    14.9398    13.9951    13.0272    12.2551    11.6308    11.2836    11.1675    11.3002
+
+  CO2(aq)
+    Charge:   0.00
+    Molar Mass:   44.0098 [g/mol]
+    Debye-Huckel a0:    3.0000 [Angstrom]
+    Equilibrium Aqueous Reaction: 
+        -1.0000  CO2(aq)                         
+        -1.0000  H2O                             
+         1.0000  HCO3-                           
+         1.0000  H+                              
+      logK:    -6.5804    -6.3447    -6.2684    -6.3882    -6.7235    -7.1969    -7.7868    -8.5280
+
+
+ Gas Components:
+  CO2(g)
+    Molar Mass:   44.0098 [g/mol]
+    Gas Reaction: 
+        -1.0000  CO2(g)                          
+        -1.0000  H2O                             
+         1.0000  HCO3-                           
+         1.0000  H+                              
+      logK:    -7.6765    -7.8136    -8.0527    -8.3574    -8.7692    -9.2165    -9.7202   -10.3393
+
+  O2(g)
+    Molar Mass:   31.9988 [g/mol]
+    Gas Reaction: 
+        -1.0000  O2(g)                           
+         1.0000  O2(aq)                          
+      logK:    -2.6567    -2.8983    -3.0633    -3.1076    -3.0354    -2.8742    -2.6488    -2.3537
+
+
+ Minerals:
+  SOM
+    Molar Mass:  180.1566 [g/mol]
+    Molar Volume:  1.0000E-04 [m^3/mol]
+    Mineral Reaction: 
+        -1.0000  SOM                             
+         1.0000  DOM1                            
+      logK:   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000   100.0000
+
+  Fe(OH)3
+    Molar Mass:  106.8690 [g/mol]
+    Molar Volume:  3.4360E-05 [m^3/mol]
+    Mineral Reaction: 
+        -1.0000  Fe(OH)3                         
+         3.0000  H2O                             
+        -3.0000  H+                              
+         1.0000  Fe+++                           
+      logK:     6.9971     5.6556     4.1038     2.6878     1.2773     0.1146    -0.9130    -1.8839
+
+
+ Surface Complexation Reactions: None
+
+   Surface Complexes: None
+
+ Ion Exchange Reactions: None
+
+ ! ************************************************************************** !
+
+--------------------------------------------------------------------------------
+
+    10  Primary Species
+
+              DOM1                  O2(aq)                HCO3-               
+              H+                    Acetate-              H2(aq)              
+              Tracer                Fe++                  Fe+++               
+              CH4(aq)             
+
+     2  Secondary Complex Species
+
+              OH-                   CO2(aq)             
+
+     0  Active Gas Species
+
+
+
+     2  Passive Gas Species
+
+              CO2(g)                O2(g)               
+
+     2  Reference Minerals
+
+              SOM                   Fe(OH)3             
+
+     2  Kinetic Mineral Reactions
+
+              SOM                   Fe(OH)3             
+
+     0  Ion Exchange Reactions
+
+     0  Ion Exchange Cations
+--------------------------------------------------------------------------------
+Constraint Species: DOM1
+Constraint Species: O2(aq)
+Constraint Species: HCO3-
+Constraint Species: H+
+Constraint Species: Acetate-
+Constraint Species: H2(aq)
+Constraint Species: Tracer
+Constraint Species: Fe++
+Constraint Species: Fe+++
+Constraint Species: CH4(aq)
+Constraint Minerals: SOM
+"SOM SPECIFIC SURFACE_AREA UNITS" set to default value.
+Constraint Minerals: Fe(OH)3
+"Fe(OH)3 SPECIFIC SURFACE_AREA UNITS" set to default value.
+Constraint Species: DOM1
+Constraint Species: O2(aq)
+Constraint Species: HCO3-
+Constraint Species: H+
+Constraint Species: Acetate-
+Constraint Species: H2(aq)
+Constraint Species: Tracer
+Constraint Species: Fe++
+Constraint Species: Fe+++
+Constraint Species: CH4(aq)
+Constraint Minerals: SOM
+"SOM SPECIFIC SURFACE_AREA UNITS" set to default value.
+Constraint Minerals: Fe(OH)3
+"Fe(OH)3 SPECIFIC SURFACE_AREA UNITS" set to default value.

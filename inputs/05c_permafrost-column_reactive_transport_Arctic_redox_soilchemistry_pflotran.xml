@@ -564,7 +564,7 @@
     <ParameterList name="chemistry subsurface" type="ParameterList">
       <Parameter name="PK type" type="string" value="chemistry alquimia"/>
       <Parameter name="engine" type="string" value="PFloTran"/>
-      <Parameter name="engine input file" type="string" value="../../data/pflotran_dir/arctic-subsurface_all.in"/>
+      <Parameter name="engine input file" type="string" value="../../data/pflotran_dir/arctic-subsurface_all_sandboxed.in"/>
       <Parameter name="domain name" type="string" value="domain"/>
       <Parameter name="auxiliary data" type="Array(string)" value="{pH}"/>
       <Parameter name="minerals" type="Array(string)" value="{SOM,Fe(OH)3,Fe(OH)2}"/> 
@@ -1174,7 +1174,7 @@
             <Parameter name="region" type="string" value="domain"/>
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function" type="ParameterList">
-              <Parameter name="number of dofs" type="int" value="1"/>
+              <Parameter name="number of dofs" type="int" value="2"/>
               <Parameter name="function type" type="string" value="composite function"/>
               <ParameterList name="dof 1 function" type="ParameterList">
                 <ParameterList name="function-constant" type="ParameterList">
@@ -1192,7 +1192,7 @@
             <Parameter name="region" type="string" value="domain"/>
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function">
-              <Parameter name="number of dofs" type="int" value="1"/>
+              <Parameter name="number of dofs" type="int" value="2"/>
               <Parameter name="function type" type="string" value="composite function"/>
               <ParameterList name="dof 1 function">
                 <ParameterList name="function-constant">
@@ -1210,7 +1210,7 @@
             <Parameter name="region" type="string" value="domain"/>
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function">
-              <Parameter name="number of dofs" type="int" value="1"/>
+              <Parameter name="number of dofs" type="int" value="2"/>
               <Parameter name="function type" type="string" value="composite function"/>
               <ParameterList name="dof 1 function">
                 <ParameterList name="function-constant">
